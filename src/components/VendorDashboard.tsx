@@ -66,7 +66,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
       customer: 'Delhi Public School',
       quantity: 15,
       amount: '₹19,485',
-      status: 'Delivered',
+      status: 'Deliveblue',
       date: '25 Nov 2025',
     },
     {
@@ -103,7 +103,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                 <ArrowLeft className="w-5 h-5 text-gray-600" />
               </button>
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
                   <ShoppingBag className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-gray-900">Vendor Portal</span>
@@ -113,17 +113,17 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
             <div className="flex items-center space-x-4">
               <button
                 onClick={() => setShowAddProduct(true)}
-                className="px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full hover:from-orange-600 hover:to-orange-700 transition-all shadow-md hidden md:flex items-center space-x-2"
+                className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all shadow-md hidden md:flex items-center space-x-2"
               >
                 <Plus className="w-4 h-4" />
                 <span>Add Product</span>
               </button>
               <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
                 <Bell className="w-6 h-6 text-gray-600" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                <span className="absolute top-1 right-1 w-2 h-2 bg-blue-500 rounded-full"></span>
               </button>
               <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center">
                   <User className="w-6 h-6 text-white" />
                 </div>
                 <div className="hidden sm:block">
@@ -153,7 +153,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center space-x-2 px-4 py-4 border-b-2 transition-colors whitespace-nowrap ${
                     activeTab === tab.id
-                      ? 'border-orange-600 text-orange-600'
+                      ? 'border-blue-600 text-blue-600'
                       : 'border-transparent text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -171,17 +171,17 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
         {activeTab === 'dashboard' && (
           <div className="space-y-6">
             {/* Welcome Banner */}
-            <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-600 rounded-3xl p-8 text-white">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
                   <h2 className="text-white mb-2">Welcome, EduMart Supplies! 🛍️</h2>
-                  <p className="text-orange-100">
+                  <p className="text-blue-100">
                     You have 12 new orders and ₹72,000 in sales this month.
                   </p>
                 </div>
                 <button
                   onClick={() => setShowAddProduct(true)}
-                  className="px-6 py-3 bg-white text-orange-600 rounded-full hover:bg-gray-100 transition-colors flex items-center space-x-2"
+                  className="px-6 py-3 bg-white text-blue-600 rounded-full hover:bg-gray-100 transition-colors flex items-center space-x-2"
                 >
                   <Plus className="w-5 h-5" />
                   <span>Add New Product</span>
@@ -193,10 +193,10 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
             <div className="grid md:grid-cols-4 gap-6">
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <DollarSign className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <DollarSign className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="text-green-600">+12%</span>
+                  <span className="text-blue-600">+12%</span>
                 </div>
                 <p className="text-gray-900 mb-1">₹72,000</p>
                 <p className="text-gray-500 text-sm">Monthly Revenue</p>
@@ -215,10 +215,10 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
 
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                    <Package className="w-6 h-6 text-purple-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Package className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="text-purple-600">12 Active</span>
+                  <span className="text-blue-600">12 Active</span>
                 </div>
                 <p className="text-gray-900 mb-1">24</p>
                 <p className="text-gray-500 text-sm">Products Listed</p>
@@ -226,10 +226,10 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
 
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center">
-                    <Star className="w-6 h-6 text-yellow-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Star className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="text-yellow-600">4.8/5</span>
+                  <span className="text-blue-600">4.8/5</span>
                 </div>
                 <p className="text-gray-900 mb-1">4.8</p>
                 <p className="text-gray-500 text-sm">Average Rating</p>
@@ -258,7 +258,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                   <h3 className="text-gray-900">Top Selling Products</h3>
                   <button
                     onClick={() => setActiveTab('products')}
-                    className="text-orange-600 hover:text-orange-700 transition-colors"
+                    className="text-blue-600 hover:text-blue-700 transition-colors"
                   >
                     View All
                   </button>
@@ -268,7 +268,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                   {products.slice(0, 3).map((product, index) => (
                     <div
                       key={index}
-                      className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl hover:bg-orange-50 transition-colors"
+                      className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl hover:bg-blue-50 transition-colors"
                     >
                       <ImageWithFallback
                         src={product.image}
@@ -281,12 +281,12 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                           <span>{product.sold} sold</span>
                           <span>•</span>
                           <div className="flex items-center space-x-1">
-                            <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                            <Star className="w-4 h-4 text-blue-500 fill-current" />
                             <span>{product.rating}</span>
                           </div>
                         </div>
                       </div>
-                      <p className="text-orange-600">{product.price}</p>
+                      <p className="text-blue-600">{product.price}</p>
                     </div>
                   ))}
                 </div>
@@ -298,7 +298,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                   <h3 className="text-gray-900">Recent Orders</h3>
                   <button
                     onClick={() => setActiveTab('orders')}
-                    className="text-orange-600 hover:text-orange-700 transition-colors"
+                    className="text-blue-600 hover:text-blue-700 transition-colors"
                   >
                     View All
                   </button>
@@ -308,7 +308,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                   {recentOrders.map((order, index) => (
                     <div
                       key={index}
-                      className="border border-gray-200 rounded-xl p-4 hover:border-orange-300 transition-colors"
+                      className="border border-gray-200 rounded-xl p-4 hover:border-blue-300 transition-colors"
                     >
                       <div className="flex items-start justify-between mb-2">
                         <div>
@@ -316,16 +316,16 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                           <p className="text-gray-600 text-sm">{order.customer}</p>
                         </div>
                         <span className={`px-3 py-1 rounded-full text-xs ${
-                          order.status === 'Delivered' ? 'bg-green-100 text-green-700' :
+                          order.status === 'Deliveblue' ? 'bg-blue-100 text-blue-700' :
                           order.status === 'Shipped' ? 'bg-blue-100 text-blue-700' :
-                          'bg-orange-100 text-orange-700'
+                          'bg-blue-100 text-blue-700'
                         }`}>
                           {order.status}
                         </span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-gray-600">{order.date}</span>
-                        <span className="text-orange-600">{order.amount}</span>
+                        <span className="text-blue-600">{order.amount}</span>
                       </div>
                     </div>
                   ))}
@@ -345,7 +345,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
               </div>
               <button
                 onClick={() => setShowAddProduct(true)}
-                className="px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all shadow-md flex items-center space-x-2"
+                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all shadow-md flex items-center space-x-2"
               >
                 <Plus className="w-5 h-5" />
                 <span>Add Product</span>
@@ -367,7 +367,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                     />
                     <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm">
                       <div className="flex items-center space-x-1">
-                        <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                        <Star className="w-4 h-4 text-blue-500 fill-current" />
                         <span className="text-gray-900">{product.rating}</span>
                       </div>
                     </div>
@@ -380,7 +380,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                     <p className="text-gray-600 text-sm mb-4">{product.category}</p>
                     
                     <div className="flex items-center justify-between mb-4">
-                      <p className="text-orange-600">{product.price}</p>
+                      <p className="text-blue-600">{product.price}</p>
                       <div className="text-sm text-gray-600">
                         Stock: {product.stock}
                       </div>
@@ -395,10 +395,10 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                     </div>
 
                     <div className="flex space-x-2">
-                      <button className="flex-1 px-4 py-2 border-2 border-orange-600 text-orange-600 rounded-lg hover:bg-orange-50 transition-colors">
+                      <button className="flex-1 px-4 py-2 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors">
                         Edit
                       </button>
-                      <button className="flex-1 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors">
+                      <button className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                         View Stats
                       </button>
                     </div>
@@ -434,12 +434,12 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                         <td className="py-4 px-4 text-gray-900">{order.product}</td>
                         <td className="py-4 px-4 text-gray-600">{order.customer}</td>
                         <td className="py-4 px-4 text-gray-600">{order.quantity}</td>
-                        <td className="py-4 px-4 text-orange-600">{order.amount}</td>
+                        <td className="py-4 px-4 text-blue-600">{order.amount}</td>
                         <td className="py-4 px-4">
                           <span className={`px-3 py-1 rounded-full text-xs ${
-                            order.status === 'Delivered' ? 'bg-green-100 text-green-700' :
+                            order.status === 'Deliveblue' ? 'bg-blue-100 text-blue-700' :
                             order.status === 'Shipped' ? 'bg-blue-100 text-blue-700' :
-                            'bg-orange-100 text-orange-700'
+                            'bg-blue-100 text-blue-700'
                           }`}>
                             {order.status}
                           </span>
@@ -475,14 +475,14 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                 <input
                   type="text"
                   placeholder="e.g. Complete Mathematics Kit"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none"
                 />
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-gray-700 mb-2">Category</label>
-                  <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none">
+                  <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none">
                     <option>Study Material</option>
                     <option>Books</option>
                     <option>Lab Equipment</option>
@@ -495,7 +495,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                   <input
                     type="text"
                     placeholder="e.g. 1,299"
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none"
                   />
                 </div>
               </div>
@@ -505,7 +505,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                 <input
                   type="number"
                   placeholder="e.g. 50"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none"
                 />
               </div>
 
@@ -514,13 +514,13 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                 <textarea
                   rows={6}
                   placeholder="Describe your product..."
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none resize-none"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none resize-none"
                 ></textarea>
               </div>
 
               <div>
                 <label className="block text-gray-700 mb-2">Product Images</label>
-                <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-orange-500 transition-colors cursor-pointer">
+                <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-blue-500 transition-colors cursor-pointer">
                   <Upload className="w-12 h-12 text-gray-400 mx-auto mb-4" />
                   <p className="text-gray-600">Click to upload or drag and drop</p>
                   <p className="text-gray-500 text-sm mt-2">PNG, JPG up to 10MB</p>
@@ -534,7 +534,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                 >
                   Cancel
                 </button>
-                <button className="flex-1 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all shadow-md">
+                <button className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all shadow-md">
                   Add Product
                 </button>
               </div>
@@ -559,7 +559,7 @@ export function VendorDashboard({ onNavigate }: VendorDashboardProps) {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex flex-col items-center justify-center py-2 rounded-xl transition-colors ${
                   activeTab === tab.id
-                    ? 'bg-orange-50 text-orange-600'
+                    ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600'
                 }`}
               >

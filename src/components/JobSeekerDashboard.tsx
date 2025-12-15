@@ -109,7 +109,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                 <ArrowLeft className="w-5 h-5 text-gray-600" />
               </button>
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-gray-900">Get Me a Tutor</span>
@@ -176,7 +176,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
         {activeTab === 'dashboard' && (
           <div className="space-y-6">
             {/* Profile Completion Banner */}
-            <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl p-8 text-white">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div className="flex-1">
                   <h2 className="text-white mb-2">Complete Your Profile</h2>
@@ -189,7 +189,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                       style={{ width: `${profileCompletion}%` }}
                     ></div>
                   </div>
-                  <button className="px-6 py-2.5 bg-white text-blue-600 rounded-full hover:bg-gray-100 transition-colors">
+                  <button className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-200">
                     Complete Profile
                   </button>
                 </div>
@@ -227,10 +227,10 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
 
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-purple-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="text-purple-600" style={{ color: 'rgba(21, 166, 250, 1)' }}>2 New</span>
+                  <span className="text-blue-600">2 New</span>
                 </div>
                 <p className="text-gray-900 mb-1">2</p>
                 <p className="text-gray-500 text-sm">Interviews</p>
@@ -238,10 +238,10 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
 
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-orange-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="text-orange-600" style={{ color: 'rgba(25, 237, 250, 1)' }}>Top 5%</span>
+                  <span className="text-blue-600">Top 5%</span>
                 </div>
                 <p className="text-gray-900 mb-1">850</p>
                 <p className="text-gray-500 text-sm">Profile Views</p>
@@ -252,7 +252,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
             <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center">
                     <TrendingUp className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -311,7 +311,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                         <button className="px-6 py-2.5 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition-colors">
                           Save
                         </button>
-                        <button className="px-6 py-2.5 text-white rounded-full transition-all shadow-md group-hover:shadow-lg" style={{ background: 'rgba(255, 255, 255, 1)', color: 'rgba(255, 255, 255, 1)', backgroundImage: 'none', backgroundClip: 'unset', WebkitBackgroundClip: 'unset' }}>
+                        <button className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full transition-all shadow-md group-hover:shadow-lg">
                           Apply Now
                         </button>
                       </div>
@@ -326,8 +326,8 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
               {/* Upcoming Interviews */}
               <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-purple-600" />
+                  <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Clock className="w-5 h-5 text-blue-600" />
                   </div>
                   <h3 className="text-gray-900">Upcoming Interviews</h3>
                 </div>
@@ -336,20 +336,20 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                   {upcomingInterviews.map((interview, index) => (
                     <div
                       key={index}
-                      className="border border-gray-200 rounded-xl p-5 hover:border-purple-300 transition-colors"
+                      className="border border-gray-200 rounded-xl p-5 hover:border-blue-300 transition-colors"
                     >
                       <div className="flex items-start justify-between mb-3">
                         <div>
                           <p className="text-gray-900 mb-1">{interview.school}</p>
                           <p className="text-gray-600 text-sm">{interview.position}</p>
                         </div>
-                        <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs" style={{ color: 'rgba(25, 166, 250, 1)', backgroundColor: 'rgba(221, 237, 248, 1)' }}>
+                        <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs">
                           {interview.mode}
                         </span>
                       </div>
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-gray-600">{interview.date} • {interview.time}</span>
-                        <button className="text-purple-600 hover:text-purple-700 transition-colors">
+                        <button className="text-blue-600 hover:text-blue-700 transition-colors">
                           Details →
                         </button>
                       </div>
@@ -357,7 +357,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                   ))}
                 </div>
 
-                <button className="w-full mt-4 px-6 py-3 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-purple-300 hover:text-purple-600 transition-colors">
+                <button className="w-full mt-4 px-6 py-3 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-blue-300 hover:text-blue-600 transition-colors">
                   View All Interviews
                 </button>
               </div>
@@ -365,8 +365,8 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
               {/* Certifications & Badges */}
               <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'rgba(219, 253, 255, 1)', color: 'rgba(197, 244, 247, 1)' }}>
-                    <Award className="w-5 h-5" style={{ color: 'rgba(25, 237, 250, 1)' }} />
+                  <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Award className="w-5 h-5 text-blue-600" />
                   </div>
                   <h3 className="text-gray-900">Certifications & Badges</h3>
                 </div>
@@ -381,14 +381,14 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                         {cert.verified ? (
                           <CheckCircle className="w-5 h-5 text-blue-600" />
                         ) : (
-                          <Clock className="w-5 h-5 text-orange-600" />
+                          <Clock className="w-5 h-5 text-blue-600" />
                         )}
                         <span className="text-gray-900">{cert.name}</span>
                       </div>
                       {cert.verified ? (
-                        <span className="text-blue-600 text-sm" style={{ color: 'rgba(25, 237, 250, 1)' }}>Verified</span>
+                        <span className="text-blue-600 text-sm">Verified</span>
                       ) : (
-                        <button className="text-orange-600 text-sm hover:text-orange-700 transition-colors" style={{ color: 'rgba(250, 34, 22, 1)' }}>
+                        <button className="text-blue-600 text-sm hover:text-blue-700 transition-colors">
                           Verify
                         </button>
                       )}
@@ -396,7 +396,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                   ))}
                 </div>
 
-                <button className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all shadow-md" style={{ background: 'linear-gradient(90deg, rgba(250, 34, 22, 1) 100%, rgba(216, 16, 5, 0) 0%)', color: 'rgba(255, 255, 255, 1)' }}>
+                <button className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-md">
                   <div className="flex items-center justify-center space-x-2">
                     <Upload className="w-4 h-4" />
                     <span>Add Certificate</span>
@@ -434,13 +434,13 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
                           <div
-                            className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-full h-2 transition-all"
+                            className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-full h-2 transition-all"
                             style={{ width: `${course.progress}%` }}
                           ></div>
                         </div>
                       </div>
 
-                      <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all">
+                      <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all">
                         Continue Learning
                       </button>
                     </div>

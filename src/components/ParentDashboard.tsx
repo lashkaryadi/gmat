@@ -89,44 +89,44 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-white to-blue-200">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-white shadow-md">
+      <header className="sticky top-0 z-40 bg-blue-600 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-4">
               <button
                 onClick={() => onNavigate('home')}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                className="p-2 hover:bg-blue-700 rounded-full transition-colors"
                 aria-label="Go back to home"
               >
-                <ArrowLeft className="w-5 h-5 text-gray-600" />
+                <ArrowLeft className="w-5 h-5 text-white" />
               </button>
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
                   <Baby className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-gray-900">Parent Portal</span>
+                <span className="text-white">Parent Portal</span>
               </div>
             </div>
 
             <div className="flex items-center space-x-4">
               <button
-                className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+                className="relative p-2 hover:bg-blue-700 rounded-full transition-colors"
                 aria-label="View notifications"
               >
-                <Bell className="w-6 h-6 text-gray-600" />
+                <Bell className="w-6 h-6 text-white" />
                 <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
-              <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
+              <div className="flex items-center space-x-3 pl-4 border-l border-blue-400">
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop&crop=face"
                   alt="Anita Desai"
                   className="w-10 h-10 rounded-full object-cover border-2 border-blue-200"
                 />
                 <div className="hidden sm:block">
-                  <p className="text-gray-900">Anita Desai</p>
-                  <p className="text-gray-500 text-xs">Parent</p>
+                  <p className="text-white">Anita Desai</p>
+                  <p className="text-white text-xs">Parent</p>
                 </div>
               </div>
             </div>
@@ -170,8 +170,8 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
         {activeTab === 'dashboard' && (
           <div className="space-y-6">
             {/* Welcome Banner with Child Info */}
-            <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl p-8 text-white">
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+            <div className="bg-blue-600 rounded-3xl p-8 text-white">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop&crop=face"
                   alt="Anita Desai"
@@ -201,10 +201,10 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
             <div className="grid md:grid-cols-4 gap-6">
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
-                    <FileText className="w-6 h-6 text-red-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <FileText className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="bg-red-100 text-red-600 px-2 py-1 rounded-full text-xs">2 New</span>
+                  <span className="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs">2 New</span>
                 </div>
                 <p className="text-gray-900 mb-1">5</p>
                 <p className="text-gray-500 text-sm">Unread Circulars</p>
@@ -212,10 +212,10 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
 
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                    <DollarSign className="w-6 h-6 text-orange-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <DollarSign className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="bg-orange-100 text-orange-600 px-2 py-1 rounded-full text-xs">Due</span>
+                  <span className="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs">Due</span>
                 </div>
                 <p className="text-gray-900 mb-1">₹27,500</p>
                 <p className="text-gray-500 text-sm">Pending Fees</p>
@@ -248,8 +248,8 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
             <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-red-100 rounded-xl flex items-center justify-center">
-                    <FileText className="w-5 h-5 text-red-600" />
+                  <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <FileText className="w-5 h-5 text-blue-600" />
                   </div>
                   <h3 className="text-gray-900">Recent Circulars & Notices</h3>
                 </div>
@@ -276,7 +276,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                         <div className="flex items-center space-x-2 mb-2">
                           <h4 className="text-gray-900">{circular.title}</h4>
                           {!circular.read && (
-                            <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
                           )}
                         </div>
                         <div className="flex items-center space-x-4 text-sm text-gray-600">
@@ -292,7 +292,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                       </div>
                       <div className="flex items-center space-x-2">
                         {circular.priority === 'high' && (
-                          <span className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs">
+                          <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs">
                             Important
                           </span>
                         )}
@@ -314,8 +314,8 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
               {/* Fee Reminders */}
               <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
-                    <DollarSign className="w-5 h-5 text-orange-600" />
+                  <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <DollarSign className="w-5 h-5 text-blue-600" />
                   </div>
                   <h3 className="text-gray-900">Fee Reminders</h3>
                 </div>
@@ -324,18 +324,18 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                   {feeReminders.map((fee, index) => (
                     <div
                       key={index}
-                      className="border border-orange-200 bg-orange-50 rounded-xl p-5"
+                      className="border border-blue-200 bg-blue-50 rounded-xl p-5"
                     >
                       <div className="flex items-start justify-between mb-3">
                         <div>
                           <p className="text-gray-900 mb-1">{fee.title}</p>
-                          <p className="text-orange-600">{fee.amount}</p>
+                          <p className="text-blue-600">{fee.amount}</p>
                         </div>
-                        <AlertCircle className="w-5 h-5 text-orange-600" />
+                        <AlertCircle className="w-5 h-5 text-blue-600" />
                       </div>
                       <div className="flex items-center justify-between text-sm">
                         <span className="text-gray-600">Due: {fee.dueDate}</span>
-                        <button className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors">
+                        <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                           Pay Now
                         </button>
                       </div>
@@ -343,7 +343,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                   ))}
                 </div>
 
-                <button className="w-full mt-4 px-6 py-3 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-orange-300 hover:text-orange-600 transition-colors">
+                <button className="w-full mt-4 px-6 py-3 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-blue-300 hover:text-blue-600 transition-colors">
                   View Payment History
                 </button>
               </div>
@@ -492,7 +492,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                   placeholder="Type your message..."
                   className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none"
                 />
-                <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all shadow-md">
+                <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all shadow-md">
                   Send
                 </button>
               </div>

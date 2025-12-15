@@ -29,11 +29,11 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
   ];
 
   const userDistribution = [
-    { name: 'Institutions', value: 5124, color: '#3b82f6' },
-    { name: 'Job Seekers', value: 52340, color: '#10b981' },
-    { name: 'Students', value: 205678, color: '#8b5cf6' },
-    { name: 'Parents', value: 156234, color: '#06b6d4' },
-    { name: 'Vendors', value: 1245, color: '#f97316' },
+    { name: 'Institutions', value: 5124, color: '#2563eb' },
+    { name: 'Job Seekers', value: 52340, color: '#3b82f6' },
+    { name: 'Students', value: 205678, color: '#60a5fa' },
+    { name: 'Parents', value: 156234, color: '#93c5fd' },
+    { name: 'Vendors', value: 1245, color: '#bfdbfe' },
   ];
 
   const kycQueue = [
@@ -93,9 +93,9 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
   ];
 
   const olympiadStats = [
-    { exam: 'Math Olympiad', registered: 45234, completed: 38456, avgScore: 72 },
-    { exam: 'Science Olympiad', registered: 38567, completed: 31245, avgScore: 68 },
-    { exam: 'English Olympiad', registered: 29345, completed: 24567, avgScore: 75 },
+    { exam: 'Math Olympiad', registeblue: 45234, completed: 38456, avgScore: 72 },
+    { exam: 'Science Olympiad', registeblue: 38567, completed: 31245, avgScore: 68 },
+    { exam: 'English Olympiad', registeblue: 29345, completed: 24567, avgScore: 75 },
   ];
 
   return (
@@ -112,7 +112,7 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                 <ArrowLeft className={`w-5 h-5 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`} />
               </button>
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <span className={darkMode ? 'text-white' : 'text-gray-900'}>Super Admin Portal</span>
@@ -132,10 +132,10 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
               </button>
               <button className={`relative p-2 ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-100'} rounded-full transition-colors`}>
                 <Bell className={`w-6 h-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`} />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                <span className="absolute top-1 right-1 w-2 h-2 bg-blue-500 rounded-full"></span>
               </button>
               <div className={`flex items-center space-x-3 pl-4 ${darkMode ? 'border-gray-700' : 'border-gray-200'} border-l`}>
-                <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center">
                   <User className="w-6 h-6 text-white" />
                 </div>
                 <div className="hidden sm:block">
@@ -168,7 +168,7 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center space-x-2 px-4 py-4 border-b-2 transition-colors whitespace-nowrap ${
                     activeTab === tab.id
-                      ? 'border-red-600 text-red-600'
+                      ? 'border-blue-600 text-blue-600'
                       : `border-transparent ${darkMode ? 'text-gray-400 hover:text-gray-200' : 'text-gray-600 hover:text-gray-900'}`
                   }`}
                 >
@@ -186,11 +186,11 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
         {activeTab === 'dashboard' && (
           <div className="space-y-6">
             {/* Welcome Banner */}
-            <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl p-8 text-white">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
                   <h2 className="text-white mb-2">Super Admin Dashboard</h2>
-                  <p className="text-red-100">
+                  <p className="text-blue-100">
                     Welcome! Platform has 420K+ active users across India.
                   </p>
                 </div>
@@ -209,20 +209,20 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                   <div className="flex items-center justify-between mb-4">
                     <div className={`w-12 h-12 ${
                       index === 0 ? 'bg-blue-100' :
-                      index === 1 ? 'bg-green-100' :
-                      index === 2 ? 'bg-purple-100' :
-                      index === 3 ? 'bg-cyan-100' :
-                      index === 4 ? 'bg-orange-100' :
-                      'bg-red-100'
+                      index === 1 ? 'bg-blue-100' :
+                      index === 2 ? 'bg-blue-100' :
+                      index === 3 ? 'bg-blue-100' :
+                      index === 4 ? 'bg-blue-100' :
+                      'bg-blue-100'
                     } rounded-xl flex items-center justify-center`}>
                       {index === 0 && <Building2 className="w-6 h-6 text-blue-600" />}
-                      {index === 1 && <Users className="w-6 h-6 text-green-600" />}
-                      {index === 2 && <GraduationCap className="w-6 h-6 text-purple-600" />}
-                      {index === 3 && <Users className="w-6 h-6 text-cyan-600" />}
-                      {index === 4 && <ShoppingBag className="w-6 h-6 text-orange-600" />}
-                      {index === 5 && <MapPin className="w-6 h-6 text-red-600" />}
+                      {index === 1 && <Users className="w-6 h-6 text-blue-600" />}
+                      {index === 2 && <GraduationCap className="w-6 h-6 text-blue-600" />}
+                      {index === 3 && <Users className="w-6 h-6 text-blue-600" />}
+                      {index === 4 && <ShoppingBag className="w-6 h-6 text-blue-600" />}
+                      {index === 5 && <MapPin className="w-6 h-6 text-blue-600" />}
                     </div>
-                    <span className="text-green-600 text-sm">{stat.growth}</span>
+                    <span className="text-blue-600 text-sm">{stat.growth}</span>
                   </div>
                   <p className={`${darkMode ? 'text-white' : 'text-gray-900'} mb-1`}>{stat.value.toLocaleString()}</p>
                   <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{stat.label}</p>
@@ -239,7 +239,7 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                   <XAxis dataKey="month" stroke={darkMode ? '#9ca3af' : '#6b7280'} />
                   <YAxis stroke={darkMode ? '#9ca3af' : '#6b7280'} />
                   <Tooltip contentStyle={{ backgroundColor: darkMode ? '#1f2937' : '#fff', border: 'none', borderRadius: '8px' }} />
-                  <Line type="monotone" dataKey="revenue" stroke="#dc2626" strokeWidth={3} />
+                  <Line type="monotone" dataKey="revenue" stroke="#3b82f6" strokeWidth={3} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -274,30 +274,30 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
               <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'} rounded-3xl p-8 shadow-md border`}>
                 <div className="flex items-center justify-between mb-6">
                   <h3 className={darkMode ? 'text-white' : 'text-gray-900'}>District Representatives Map</h3>
-                  <span className={`px-4 py-2 rounded-full text-sm ${darkMode ? 'bg-red-900 text-red-200' : 'bg-red-100 text-red-700'}`}>
+                  <span className={`px-4 py-2 rounded-full text-sm ${darkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-700'}`}>
                     2,487 Active Reps
                   </span>
                 </div>
                 
                 {/* India Map Visual Representation */}
-                <div className="relative h-64 bg-gradient-to-br from-orange-100 to-green-100 rounded-2xl flex items-center justify-center overflow-hidden">
+                <div className="relative h-64 bg-gradient-to-br from-blue-100 to-blue-100 rounded-2xl flex items-center justify-center overflow-hidden">
                   <div className="text-center">
-                    <MapPin className="w-16 h-16 text-orange-600 mx-auto mb-4" />
+                    <MapPin className="w-16 h-16 text-blue-600 mx-auto mb-4" />
                     <p className="text-gray-900 mb-2">India Coverage</p>
                     <p className="text-gray-600 text-sm">Representatives across 28 states and 8 UTs</p>
                   </div>
                   
-                  {/* Scattered Map Pins */}
-                  <div className="absolute top-8 left-12 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                  <div className="absolute top-16 right-20 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                  <div className="absolute bottom-12 left-24 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                  <div className="absolute bottom-20 right-16 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                  <div className="absolute top-1/2 left-1/3 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                  {/* Scatteblue Map Pins */}
+                  <div className="absolute top-8 left-12 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                  <div className="absolute top-16 right-20 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-12 left-24 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-20 right-16 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                  <div className="absolute top-1/2 left-1/3 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
                 </div>
 
                 <button
                   onClick={() => setActiveTab('reps')}
-                  className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all shadow-md"
+                  className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all shadow-md"
                 >
                   View All Representatives
                 </button>
@@ -312,7 +312,7 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                   <h3 className={darkMode ? 'text-white' : 'text-gray-900'}>KYC Verification Queue</h3>
                   <button
                     onClick={() => setActiveTab('kyc')}
-                    className="text-red-600 hover:text-red-700 transition-colors"
+                    className="text-blue-600 hover:text-blue-700 transition-colors"
                   >
                     View All
                   </button>
@@ -323,7 +323,7 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                     <div
                       key={index}
                       className={`border rounded-xl p-5 ${
-                        darkMode ? 'border-gray-700 hover:border-red-500' : 'border-gray-200 hover:border-red-300'
+                        darkMode ? 'border-gray-700 hover:border-blue-500' : 'border-gray-200 hover:border-blue-300'
                       } transition-colors`}
                     >
                       <div className="flex items-start justify-between mb-2">
@@ -340,10 +340,10 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                       <div className="flex items-center justify-between text-sm mt-4">
                         <span className={darkMode ? 'text-gray-400' : 'text-gray-600'}>{item.docs} documents</span>
                         <div className="flex space-x-2">
-                          <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-xs">
+                          <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs">
                             Approve
                           </button>
-                          <button className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-xs">
+                          <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs">
                             Reject
                           </button>
                         </div>
@@ -367,13 +367,13 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                     >
                       <div className="flex items-center justify-between mb-3">
                         <h4 className={darkMode ? 'text-white' : 'text-gray-900'}>{sub.plan}</h4>
-                        <span className="text-green-600 text-sm">{sub.growth}</span>
+                        <span className="text-blue-600 text-sm">{sub.growth}</span>
                       </div>
                       <div className="flex items-center justify-between">
                         <div>
                           <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{sub.subscribers} subscribers</p>
                         </div>
-                        <p className="text-red-600">{sub.revenue}</p>
+                        <p className="text-blue-600">{sub.revenue}</p>
                       </div>
                     </div>
                   ))}
@@ -412,9 +412,9 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                         <td className={`py-4 px-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>{rep.state}</td>
                         <td className={`py-4 px-4 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{rep.reps}</td>
                         <td className={`py-4 px-4 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{rep.active}</td>
-                        <td className="py-4 px-4 text-green-600">{rep.revenue}</td>
+                        <td className="py-4 px-4 text-blue-600">{rep.revenue}</td>
                         <td className="py-4 px-4">
-                          <button className="text-red-600 hover:text-red-700 transition-colors">
+                          <button className="text-blue-600 hover:text-blue-700 transition-colors">
                             View Details →
                           </button>
                         </td>
@@ -467,10 +467,10 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                             <span>Review</span>
                           </div>
                         </button>
-                        <button className="px-6 py-2.5 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors">
+                        <button className="px-6 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
                           Approve
                         </button>
-                        <button className="px-6 py-2.5 bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors">
+                        <button className="px-6 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
                           Reject
                         </button>
                       </div>
@@ -500,8 +500,8 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                         <h4 className={`${darkMode ? 'text-white' : 'text-gray-900'} mb-3`}>{olympiad.exam}</h4>
                         <div className="grid grid-cols-3 gap-6">
                           <div>
-                            <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-1`}>Registered</p>
-                            <p className={darkMode ? 'text-white' : 'text-gray-900'}>{olympiad.registered.toLocaleString()}</p>
+                            <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-1`}>Registeblue</p>
+                            <p className={darkMode ? 'text-white' : 'text-gray-900'}>{olympiad.registeblue.toLocaleString()}</p>
                           </div>
                           <div>
                             <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-1`}>Completed</p>
@@ -509,11 +509,11 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                           </div>
                           <div>
                             <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-1`}>Avg Score</p>
-                            <p className="text-green-600">{olympiad.avgScore}%</p>
+                            <p className="text-blue-600">{olympiad.avgScore}%</p>
                           </div>
                         </div>
                       </div>
-                      <button className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full hover:from-red-600 hover:to-red-700 transition-all shadow-md">
+                      <button className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all shadow-md">
                         Manage
                       </button>
                     </div>
@@ -545,39 +545,39 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
 
                 <div className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                      <Award className="w-6 h-6 text-purple-600" />
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <Award className="w-6 h-6 text-blue-600" />
                     </div>
                     <h4 className={darkMode ? 'text-white' : 'text-gray-900'}>Olympiad Content</h4>
                   </div>
                   <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4`}>Manage exam questions and schedules</p>
-                  <button className="w-full px-6 py-3 bg-purple-600 text-white rounded-xl hover:bg-purple-700 transition-colors">
+                  <button className="w-full px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors">
                     Manage Content
                   </button>
                 </div>
 
                 <div className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                      <Edit className="w-6 h-6 text-green-600" />
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <Edit className="w-6 h-6 text-blue-600" />
                     </div>
                     <h4 className={darkMode ? 'text-white' : 'text-gray-900'}>Notifications</h4>
                   </div>
                   <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4`}>Send platform-wide announcements</p>
-                  <button className="w-full px-6 py-3 bg-green-600 text-white rounded-xl hover:bg-green-700 transition-colors">
+                  <button className="w-full px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors">
                     Create Notification
                   </button>
                 </div>
 
                 <div className={`p-6 rounded-2xl ${darkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                      <FileText className="w-6 h-6 text-orange-600" />
+                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                      <FileText className="w-6 h-6 text-blue-600" />
                     </div>
                     <h4 className={darkMode ? 'text-white' : 'text-gray-900'}>Blog Posts</h4>
                   </div>
                   <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-600'} mb-4`}>Manage platform blog and articles</p>
-                  <button className="w-full px-6 py-3 bg-orange-600 text-white rounded-xl hover:bg-orange-700 transition-colors">
+                  <button className="w-full px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors">
                     Manage Blog
                   </button>
                 </div>

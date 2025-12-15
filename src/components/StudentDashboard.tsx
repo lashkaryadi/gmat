@@ -76,10 +76,10 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
     { title: 'English Grammar Test', questions: 30, duration: '45 min', attempted: true, score: 26 },
   ];
 
-  const COLORS = ['#10b981', '#f59e0b', '#3b82f6', '#8b5cf6', '#ec4899'];
+  const COLORS = ['#2563eb', '#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe'];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -92,7 +92,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                 <ArrowLeft className="w-5 h-5 text-gray-600" />
               </button>
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
                   <Award className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-gray-900">Student Portal</span>
@@ -102,10 +102,10 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
             <div className="flex items-center space-x-4">
               <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
                 <Bell className="w-6 h-6 text-gray-600" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                <span className="absolute top-1 right-1 w-2 h-2 bg-blue-500 rounded-full"></span>
               </button>
               <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
-                <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center">
                   <User className="w-6 h-6 text-white" />
                 </div>
                 <div className="hidden sm:block">
@@ -136,7 +136,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center space-x-2 px-4 py-4 border-b-2 transition-colors whitespace-nowrap ${
                     activeTab === tab.id
-                      ? 'border-purple-600 text-purple-600'
+                      ? 'border-blue-600 text-blue-600'
                       : 'border-transparent text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -154,11 +154,11 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
         {activeTab === 'dashboard' && (
           <div className="space-y-6">
             {/* Welcome Banner */}
-            <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-r from-blue-600 to-blue-600 rounded-3xl p-8 text-white">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
                   <h2 className="text-white mb-2">Welcome back, Aarav! 🎓</h2>
-                  <p className="text-purple-100 mb-4">
+                  <p className="text-blue-100 mb-4">
                     Keep up the great work! You're in the top 15% of your class.
                   </p>
                   <div className="flex flex-wrap gap-4">
@@ -184,10 +184,10 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
             <div className="grid md:grid-cols-4 gap-6">
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                    <Trophy className="w-6 h-6 text-purple-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Trophy className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="text-purple-600">Top 15%</span>
+                  <span className="text-blue-600">Top 15%</span>
                 </div>
                 <p className="text-gray-900 mb-1">124</p>
                 <p className="text-gray-500 text-sm">State Rank</p>
@@ -206,10 +206,10 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
 
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <Award className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Award className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="text-green-600">5 New</span>
+                  <span className="text-blue-600">5 New</span>
                 </div>
                 <p className="text-gray-900 mb-1">12</p>
                 <p className="text-gray-500 text-sm">Badges Earned</p>
@@ -217,10 +217,10 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
 
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-orange-600" />
+                  <div className="w-12 h-12 blue-100 rounded-xl flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="text-orange-600">87%</span>
+                  <span className="text-blue-600">87%</span>
                 </div>
                 <p className="text-gray-900 mb-1">87%</p>
                 <p className="text-gray-500 text-sm">Average Score</p>
@@ -231,14 +231,14 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
             <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center">
                     <Trophy className="w-5 h-5 text-white" />
                   </div>
                   <h3 className="text-gray-900">Upcoming Olympiads</h3>
                 </div>
                 <button
                   onClick={() => setActiveTab('olympiad')}
-                  className="text-purple-600 hover:text-purple-700 transition-colors"
+                  className="text-blue-600 hover:text-blue-700 transition-colors"
                 >
                   View All
                 </button>
@@ -250,8 +250,8 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                     key={index}
                     className={`border rounded-2xl p-6 transition-all ${
                       olympiad.registered
-                        ? 'border-purple-200 bg-purple-50'
-                        : 'border-gray-200 hover:border-purple-300 hover:shadow-lg'
+                        ? 'border-blue-200 bg-blue-50'
+                        : 'border-gray-200 hover:border-blue-300 hover:shadow-lg'
                     }`}
                   >
                     <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
@@ -259,7 +259,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                         <div className="flex items-center space-x-2 mb-2">
                           <h4 className="text-gray-900">{olympiad.title}</h4>
                           {olympiad.registered && (
-                            <CheckCircle className="w-5 h-5 text-green-600" />
+                            <CheckCircle className="w-5 h-5 text-blue-600" />
                           )}
                         </div>
                         <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
@@ -278,15 +278,15 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                       </div>
                       <div className="flex items-center space-x-4">
                         <div className="text-center">
-                          <p className="text-orange-600 text-sm">Starts in</p>
+                          <p className="text-blue-600 text-sm">Starts in</p>
                           <p className="text-gray-900">{olympiad.countdown}</p>
                         </div>
                         {olympiad.registered ? (
-                          <button className="px-6 py-2.5 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors">
+                          <button className="px-6 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
                             Registered ✓
                           </button>
                         ) : (
-                          <button className="px-6 py-2.5 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full hover:from-purple-600 hover:to-purple-700 transition-all shadow-md">
+                          <button className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all shadow-md">
                             Register Now
                           </button>
                         )}
@@ -308,7 +308,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                     <XAxis dataKey="subject" />
                     <YAxis />
                     <Tooltip />
-                    <Bar dataKey="score" fill="#8b5cf6" radius={[8, 8, 0, 0]} />
+                    <Bar dataKey="score" fill="#3b82f6" radius={[8, 8, 0, 0]} />
                   </BarChart>
                 </ResponsiveContainer>
               </div>
@@ -319,7 +319,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                   <h3 className="text-gray-900">Continue Learning</h3>
                   <button
                     onClick={() => setActiveTab('learning')}
-                    className="text-purple-600 hover:text-purple-700 transition-colors"
+                    className="text-blue-600 hover:text-blue-700 transition-colors"
                   >
                     View All
                   </button>
@@ -329,7 +329,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                   {learningResources.map((resource, index) => (
                     <div
                       key={index}
-                      className="border border-gray-200 rounded-xl overflow-hidden hover:border-purple-300 hover:shadow-lg transition-all"
+                      className="border border-gray-200 rounded-xl overflow-hidden hover:border-blue-300 hover:shadow-lg transition-all"
                     >
                       <div className="flex items-center space-x-4 p-4">
                         <ImageWithFallback
@@ -351,12 +351,12 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                           </div>
                           <div className="w-full bg-gray-200 rounded-full h-2">
                             <div
-                              className="bg-gradient-to-r from-purple-500 to-blue-500 rounded-full h-2 transition-all"
+                              className="bg-gradient-to-r from-blue-500 to-blue-500 rounded-full h-2 transition-all"
                               style={{ width: `${resource.progress}%` }}
                             ></div>
                           </div>
                         </div>
-                        <button className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors">
+                        <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                           <Play className="w-4 h-4" />
                         </button>
                       </div>
@@ -371,20 +371,20 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
         {activeTab === 'olympiad' && (
           <div className="space-y-6">
             {/* Olympiad Header */}
-            <div className="bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-500 rounded-3xl p-8 text-white">
               <div className="text-center">
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Trophy className="w-10 h-10 text-orange-500" />
+                  <Trophy className="w-10 h-10 text-blue-500" />
                 </div>
                 <h2 className="text-white mb-2">Olympiad Zone</h2>
-                <p className="text-orange-100">Compete with the best students across India!</p>
+                <p className="text-blue-100">Compete with the best students across India!</p>
               </div>
             </div>
 
             {/* Leaderboard */}
             <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-500 rounded-xl flex items-center justify-center">
                   <Trophy className="w-5 h-5 text-white" />
                 </div>
                 <h3 className="text-gray-900">State Leaderboard - Mathematics</h3>
@@ -396,15 +396,15 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                     key={index}
                     className={`flex items-center justify-between p-5 rounded-xl transition-all ${
                       entry.isUser
-                        ? 'bg-purple-50 border-2 border-purple-300'
+                        ? 'bg-blue-50 border-2 border-blue-300'
                         : 'bg-gray-50 border border-gray-200'
                     }`}
                   >
                     <div className="flex items-center space-x-4">
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                        entry.badge === 'gold' ? 'bg-yellow-400' :
+                        entry.badge === 'gold' ? 'bg-blue-400' :
                         entry.badge === 'silver' ? 'bg-gray-300' :
-                        entry.badge === 'bronze' ? 'bg-orange-400' :
+                        entry.badge === 'bronze' ? 'bg-blue-400' :
                         'bg-gray-200'
                       }`}>
                         {entry.rank <= 3 ? (
@@ -414,7 +414,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                         )}
                       </div>
                       <div>
-                        <p className={`${entry.isUser ? 'text-purple-700' : 'text-gray-900'}`}>
+                        <p className={`${entry.isUser ? 'text-blue-700' : 'text-gray-900'}`}>
                           {entry.name}
                         </p>
                         <p className="text-gray-500 text-sm">{entry.state}</p>
@@ -442,13 +442,13 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                   </div>
                 </div>
                 <p className="text-gray-900 mb-2">85/100</p>
-                <p className="text-green-600 text-sm">+5 from last attempt</p>
+                <p className="text-blue-600 text-sm">+5 from last attempt</p>
               </div>
 
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                    <Award className="w-6 h-6 text-purple-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Award className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
                     <p className="text-gray-900">State Rank</p>
@@ -461,8 +461,8 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
 
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                    <Trophy className="w-6 h-6 text-orange-600" />
+                  <div className="w-12 h-12 blue-100 rounded-xl flex items-center justify-center">
+                    <Trophy className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
                     <p className="text-gray-900">Badges Earned</p>
@@ -470,7 +470,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                   </div>
                 </div>
                 <p className="text-gray-900 mb-2">12</p>
-                <p className="text-orange-600 text-sm">3 more to gold level</p>
+                <p className="text-blue-600 text-sm">3 more to gold level</p>
               </div>
             </div>
           </div>
@@ -487,7 +487,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                   <XAxis dataKey="month" />
                   <YAxis />
                   <Tooltip />
-                  <Line type="monotone" dataKey="score" stroke="#8b5cf6" strokeWidth={3} />
+                  <Line type="monotone" dataKey="score" stroke="#3b82f6" strokeWidth={3} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -531,26 +531,26 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                     <p className="text-blue-600">12.5 hrs</p>
                   </div>
 
-                  <div className="flex items-center justify-between p-4 bg-green-50 rounded-xl">
+                  <div className="flex items-center justify-between p-4 bg-blue-50 rounded-xl">
                     <div className="flex items-center space-x-3">
-                      <BookOpen className="w-8 h-8 text-green-600" />
+                      <BookOpen className="w-8 h-8 text-blue-600" />
                       <div>
                         <p className="text-gray-900">Resources Completed</p>
                         <p className="text-gray-500 text-sm">This month</p>
                       </div>
                     </div>
-                    <p className="text-green-600">8</p>
+                    <p className="text-blue-600">8</p>
                   </div>
 
-                  <div className="flex items-center justify-between p-4 bg-purple-50 rounded-xl">
+                  <div className="flex items-center justify-between p-4 bg-blue-50 rounded-xl">
                     <div className="flex items-center space-x-3">
-                      <FileText className="w-8 h-8 text-purple-600" />
+                      <FileText className="w-8 h-8 text-blue-600" />
                       <div>
                         <p className="text-gray-900">Tests Taken</p>
                         <p className="text-gray-500 text-sm">This month</p>
                       </div>
                     </div>
-                    <p className="text-purple-600">15</p>
+                    <p className="text-blue-600">15</p>
                   </div>
                 </div>
               </div>
@@ -567,7 +567,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                 {practiceTests.map((test, index) => (
                   <div
                     key={index}
-                    className="border border-gray-200 rounded-xl p-6 hover:border-purple-300 hover:shadow-lg transition-all"
+                    className="border border-gray-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-lg transition-all"
                   >
                     <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
                       <div className="flex-1">
@@ -579,17 +579,17 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                           {test.attempted && test.score && (
                             <>
                               <span>•</span>
-                              <span className="text-green-600">Score: {test.score}/{test.questions}</span>
+                              <span className="text-blue-600">Score: {test.score}/{test.questions}</span>
                             </>
                           )}
                         </div>
                       </div>
                       {test.attempted ? (
-                        <button className="px-6 py-2.5 border-2 border-purple-600 text-purple-600 rounded-full hover:bg-purple-50 transition-colors">
+                        <button className="px-6 py-2.5 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition-colors">
                           Review Answers
                         </button>
                       ) : (
-                        <button className="px-6 py-2.5 bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-full hover:from-purple-600 hover:to-purple-700 transition-all shadow-md">
+                        <button className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all shadow-md">
                           Start Test
                         </button>
                       )}
@@ -619,7 +619,7 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex flex-col items-center justify-center py-2 rounded-xl transition-colors ${
                   activeTab === tab.id
-                    ? 'bg-purple-50 text-purple-600'
+                    ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600'
                 }`}
               >
