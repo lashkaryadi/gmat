@@ -104,11 +104,12 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
               <button
                 onClick={() => onNavigate('home')}
                 className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                aria-label="Go back to home"
               >
                 <ArrowLeft className="w-5 h-5 text-gray-600" />
               </button>
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-gray-900">Get Me a Tutor</span>
@@ -116,14 +117,19 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
             </div>
 
             <div className="flex items-center space-x-4">
-              <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
+              <button 
+                className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+                aria-label="View notifications"
+              >
                 <Bell className="w-6 h-6 text-gray-600" />
                 <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
               <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
-                <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
-                  <User className="w-6 h-6 text-white" />
-                </div>
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=400&fit=crop&crop=face"
+                  alt="Priya Sharma"
+                  className="w-10 h-10 rounded-full object-cover border-2 border-blue-200"
+                />
                 <div className="hidden sm:block">
                   <p className="text-gray-900">Priya Sharma</p>
                   <p className="text-gray-500 text-xs">Mathematics Teacher</p>
@@ -152,7 +158,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center space-x-2 px-4 py-4 border-b-2 transition-colors whitespace-nowrap ${
                     activeTab === tab.id
-                      ? 'border-green-600 text-green-600'
+                      ? 'border-blue-600 text-blue-600'
                       : 'border-transparent text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -170,20 +176,20 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
         {activeTab === 'dashboard' && (
           <div className="space-y-6">
             {/* Profile Completion Banner */}
-            <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl p-8 text-white">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div className="flex-1">
                   <h2 className="text-white mb-2">Complete Your Profile</h2>
-                  <p className="text-green-100 mb-4">
+                  <p className="text-blue-100 mb-4">
                     {profileCompletion}% complete - Add more details to get better job matches!
                   </p>
-                  <div className="w-full bg-green-700 rounded-full h-3 mb-4">
+                  <div className="w-full bg-blue-700 rounded-full h-3 mb-4">
                     <div
                       className="bg-white rounded-full h-3 transition-all duration-500"
                       style={{ width: `${profileCompletion}%` }}
                     ></div>
                   </div>
-                  <button className="px-6 py-2.5 bg-white text-green-600 rounded-full hover:bg-gray-100 transition-colors">
+                  <button className="px-6 py-2.5 bg-white text-blue-600 rounded-full hover:bg-gray-100 transition-colors">
                     Complete Profile
                   </button>
                 </div>
@@ -210,10 +216,10 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
 
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <FileText className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <FileText className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="text-green-600">+5</span>
+                  <span className="text-blue-600">+5</span>
                 </div>
                 <p className="text-gray-900 mb-1">12</p>
                 <p className="text-gray-500 text-sm">Applications</p>
@@ -246,7 +252,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
             <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
                     <TrendingUp className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -254,7 +260,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                     <p className="text-gray-500 text-sm">Jobs matching your profile and preferences</p>
                   </div>
                 </div>
-                <button className="text-green-600 hover:text-green-700 transition-colors">
+                <button className="text-blue-600 hover:text-blue-700 transition-colors">
                   View All
                 </button>
               </div>
@@ -263,7 +269,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                 {aiRecommendedJobs.map((job, index) => (
                   <div
                     key={index}
-                    className="border border-gray-200 rounded-2xl p-6 hover:border-green-300 hover:shadow-lg transition-all group"
+                    className="border border-gray-200 rounded-2xl p-6 hover:border-blue-300 hover:shadow-lg transition-all group"
                   >
                     <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                       <div className="flex-1">
@@ -272,7 +278,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                             <div className="flex items-center space-x-2 mb-2">
                               <h4 className="text-gray-900">{job.title}</h4>
                               {job.verified && (
-                                <CheckCircle className="w-5 h-5 text-green-600" />
+                                <CheckCircle className="w-5 h-5 text-blue-600" />
                               )}
                             </div>
                             <div className="flex items-center space-x-2 text-gray-600 mb-2">
@@ -280,7 +286,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                               <span>{job.school}</span>
                             </div>
                           </div>
-                          <div className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm whitespace-nowrap">
+                          <div className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm whitespace-nowrap">
                             {job.match}% Match
                           </div>
                         </div>
@@ -302,10 +308,10 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                       </div>
 
                       <div className="flex items-center space-x-3">
-                        <button className="px-6 py-2.5 border-2 border-green-600 text-green-600 rounded-full hover:bg-green-50 transition-colors">
+                        <button className="px-6 py-2.5 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition-colors">
                           Save
                         </button>
-                        <button className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full hover:from-green-600 hover:to-green-700 transition-all shadow-md group-hover:shadow-lg">
+                        <button className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all shadow-md group-hover:shadow-lg">
                           Apply Now
                         </button>
                       </div>
@@ -373,14 +379,14 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                     >
                       <div className="flex items-center space-x-3">
                         {cert.verified ? (
-                          <CheckCircle className="w-5 h-5 text-green-600" />
+                          <CheckCircle className="w-5 h-5 text-blue-600" />
                         ) : (
                           <Clock className="w-5 h-5 text-orange-600" />
                         )}
                         <span className="text-gray-900">{cert.name}</span>
                       </div>
                       {cert.verified ? (
-                        <span className="text-green-600 text-sm">Verified</span>
+                        <span className="text-blue-600 text-sm">Verified</span>
                       ) : (
                         <button className="text-orange-600 text-sm hover:text-orange-700 transition-colors">
                           Verify
@@ -410,7 +416,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                 {courses.map((course, index) => (
                   <div
                     key={index}
-                    className="border border-gray-200 rounded-2xl overflow-hidden hover:border-green-300 hover:shadow-lg transition-all"
+                    className="border border-gray-200 rounded-2xl overflow-hidden hover:border-blue-300 hover:shadow-lg transition-all"
                   >
                     <ImageWithFallback
                       src={course.image}
@@ -424,17 +430,17 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                       <div className="mb-4">
                         <div className="flex items-center justify-between text-sm mb-2">
                           <span className="text-gray-600">Progress</span>
-                          <span className="text-green-600">{course.progress}%</span>
+                          <span className="text-blue-600">{course.progress}%</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
                           <div
-                            className="bg-gradient-to-r from-green-500 to-green-600 rounded-full h-2 transition-all"
+                            className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-full h-2 transition-all"
                             style={{ width: `${course.progress}%` }}
                           ></div>
                         </div>
                       </div>
 
-                      <button className="w-full px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:from-green-600 hover:to-green-700 transition-all">
+                      <button className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all">
                         Continue Learning
                       </button>
                     </div>
@@ -463,7 +469,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex flex-col items-center justify-center py-2 rounded-xl transition-colors ${
                   activeTab === tab.id
-                    ? 'bg-green-50 text-green-600'
+                    ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600'
                 }`}
               >

@@ -84,12 +84,12 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
       name: 'Aarav Sharma',
       class: 'Class 8-A',
       rollNo: '15',
-      image: 'https://images.unsplash.com/photo-1623303366639-0e330d7c3d9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxJbmRpYW4lMjBzdHVkZW50JTIwc3R1ZHlpbmd8ZW58MXx8fHwxNzY0MjYzODAxfDA&ixlib=rb-4.1.0&q=80&w=400',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-teal-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,11 +98,12 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
               <button
                 onClick={() => onNavigate('home')}
                 className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                aria-label="Go back to home"
               >
                 <ArrowLeft className="w-5 h-5 text-gray-600" />
               </button>
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
                   <Baby className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-gray-900">Parent Portal</span>
@@ -110,14 +111,19 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
             </div>
 
             <div className="flex items-center space-x-4">
-              <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
+              <button
+                className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+                aria-label="View notifications"
+              >
                 <Bell className="w-6 h-6 text-gray-600" />
                 <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
               <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
-                <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center">
-                  <User className="w-6 h-6 text-white" />
-                </div>
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop&crop=face"
+                  alt="Anita Desai"
+                  className="w-10 h-10 rounded-full object-cover border-2 border-blue-200"
+                />
                 <div className="hidden sm:block">
                   <p className="text-gray-900">Anita Desai</p>
                   <p className="text-gray-500 text-xs">Parent</p>
@@ -146,7 +152,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center space-x-2 px-4 py-4 border-b-2 transition-colors whitespace-nowrap ${
                     activeTab === tab.id
-                      ? 'border-teal-600 text-teal-600'
+                      ? 'border-blue-600 text-blue-600'
                       : 'border-transparent text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -164,7 +170,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
         {activeTab === 'dashboard' && (
           <div className="space-y-6">
             {/* Welcome Banner with Child Info */}
-            <div className="bg-gradient-to-r from-teal-500 to-teal-600 rounded-3xl p-8 text-white">
+            <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl p-8 text-white">
               <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                 <ImageWithFallback
                   src={children[0].image}
@@ -173,7 +179,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                 />
                 <div className="flex-1">
                   <h2 className="text-white mb-2">Welcome, Anita!</h2>
-                  <p className="text-teal-100 mb-4">
+                  <p className="text-blue-100 mb-4">
                     Stay updated with {children[0].name}'s school activities and performance
                   </p>
                   <div className="flex flex-wrap gap-4 text-sm">
@@ -228,10 +234,10 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
 
               <div className="bg-white rounded-2xl p-6 shadow-md border border-gray-100">
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <Award className="w-6 h-6 text-green-600" />
+                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Award className="w-6 h-6 text-blue-600" />
                   </div>
-                  <span className="bg-green-100 text-green-600 px-2 py-1 rounded-full text-xs">Active</span>
+                  <span className="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs">Active</span>
                 </div>
                 <p className="text-gray-900 mb-1">3</p>
                 <p className="text-gray-500 text-sm">Olympiad Registered</p>
@@ -249,7 +255,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                 </div>
                 <button
                   onClick={() => setActiveTab('circulars')}
-                  className="text-teal-600 hover:text-teal-700 transition-colors"
+                  className="text-blue-600 hover:text-blue-700 transition-colors"
                 >
                   View All
                 </button>
@@ -262,7 +268,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                     className={`border rounded-2xl p-6 transition-all ${
                       circular.read
                         ? 'border-gray-200 bg-gray-50'
-                        : 'border-teal-200 bg-teal-50 hover:shadow-lg'
+                        : 'border-blue-200 bg-blue-50 hover:shadow-lg'
                     }`}
                   >
                     <div className="flex items-start justify-between gap-4">
@@ -290,7 +296,10 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                             Important
                           </span>
                         )}
-                        <button className="text-teal-600 hover:text-teal-700 transition-colors">
+                        <button
+                          className="text-blue-600 hover:text-blue-700 transition-colors"
+                          aria-label="View circular details"
+                        >
                           <ChevronRight className="w-5 h-5" />
                         </button>
                       </div>
@@ -386,14 +395,14 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
             <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center">
-                    <Award className="w-5 h-5 text-green-600" />
+                  <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <Award className="w-5 h-5 text-blue-600" />
                   </div>
                   <h3 className="text-gray-900">Olympiad Updates</h3>
                 </div>
                 <button
                   onClick={() => setActiveTab('olympiad')}
-                  className="text-teal-600 hover:text-teal-700 transition-colors"
+                  className="text-blue-600 hover:text-blue-700 transition-colors"
                 >
                   View All
                 </button>
@@ -403,7 +412,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                 {olympiadUpdates.map((update, index) => (
                   <div
                     key={index}
-                    className="border border-green-200 bg-green-50 rounded-2xl p-6 hover:shadow-lg transition-shadow"
+                    className="border border-blue-200 bg-blue-50 rounded-2xl p-6 hover:shadow-lg transition-shadow"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex-1">
@@ -411,7 +420,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                           <h4 className="text-gray-900">{update.title}</h4>
                           <span className={`px-3 py-1 rounded-full text-xs ${
                             update.status === 'Open'
-                              ? 'bg-green-100 text-green-700'
+                              ? 'bg-blue-100 text-blue-700'
                               : 'bg-gray-100 text-gray-700'
                           }`}>
                             {update.status}
@@ -424,7 +433,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                         </div>
                       </div>
                       {update.status === 'Open' && (
-                        <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                        <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
                           Register
                         </button>
                       )}
@@ -442,10 +451,10 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
               <h3 className="text-gray-900 mb-6">Messages with School</h3>
               
               <div className="space-y-4 mb-6">
-                <div className="border border-gray-200 rounded-xl p-4 hover:border-teal-300 transition-colors">
+                <div className="border border-gray-200 rounded-xl p-4 hover:border-blue-300 transition-colors">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <School className="w-6 h-6 text-teal-600" />
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <School className="w-6 h-6 text-blue-600" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
@@ -481,9 +490,9 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                 <input
                   type="text"
                   placeholder="Type your message..."
-                  className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-teal-500 focus:outline-none"
+                  className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none"
                 />
-                <button className="px-6 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all shadow-md">
+                <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl hover:from-blue-600 hover:to-blue-700 transition-all shadow-md">
                   Send
                 </button>
               </div>
@@ -509,7 +518,7 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex flex-col items-center justify-center py-2 rounded-xl transition-colors ${
                   activeTab === tab.id
-                    ? 'bg-teal-50 text-teal-600'
+                    ? 'bg-blue-50 text-blue-600'
                     : 'text-gray-600'
                 }`}
               >

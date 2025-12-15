@@ -1,5 +1,27 @@
-import { UserRole } from '../App';
-import { ArrowLeft, Building2, Users, Briefcase, Eye, UserCheck, TrendingUp, Plus, Search, Filter, MapPin, GraduationCap, Star, CheckCircle, Bell, User, FileText, DollarSign, Calendar, ChevronRight, Award } from 'lucide-react';
+import type { UserRole } from '../App';
+import {
+  ArrowLeft,
+  Building2,
+  Users,
+  Briefcase,
+  Eye,
+  UserCheck,
+  TrendingUp,
+  Plus,
+  Search,
+  Filter,
+  MapPin,
+  GraduationCap,
+  Star,
+  CheckCircle,
+  Bell,
+  User,
+  FileText,
+  DollarSign,
+  Calendar,
+  ChevronRight,
+  Award
+} from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
 
@@ -20,7 +42,7 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
       location: 'Bangalore, Karnataka',
       match: 95,
       verified: true,
-      image: 'https://images.unsplash.com/photo-1758797316117-8d133af25f8c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxJbmRpYW4lMjB0ZWFjaGVyJTIwdGVhY2hpbmd8ZW58MXx8fHwxNzY0MjYzNzk5fDA&ixlib=rb-4.1.0&q=80&w=400',
+      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=400&fit=crop&crop=face',
     },
     {
       name: 'Rajesh Kumar',
@@ -30,7 +52,7 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
       location: 'Bangalore, Karnataka',
       match: 92,
       verified: true,
-      image: 'https://images.unsplash.com/photo-1572847748080-bac263fae977?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxJbmRpYW4lMjBzdHVkZW50cyUyMGNsYXNzcm9vbXxlbnwxfHx8fDE3NjQyNjM3OTh8MA&ixlib=rb-4.1.0&q=80&w=400',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face',
     },
     {
       name: 'Anita Desai',
@@ -40,7 +62,7 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
       location: 'Bangalore, Karnataka',
       match: 88,
       verified: true,
-      image: 'https://images.unsplash.com/photo-1623303366639-0e330d7c3d9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxJbmRpYW4lMjBzdHVkZW50JTIwc3R1ZHlpbmd8ZW58MXx8fHwxNzY0MjYzODAxfDA&ixlib=rb-4.1.0&q=80&w=400',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face',
     },
   ];
 
@@ -78,6 +100,7 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
               <button
                 onClick={() => onNavigate('home')}
                 className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                aria-label="Go back to home"
               >
                 <ArrowLeft className="w-5 h-5 text-gray-600" />
               </button>
@@ -97,17 +120,22 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
                 <Plus className="w-4 h-4" />
                 <span>Post Job</span>
               </button>
-              <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
+              <button
+                className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+                aria-label="View notifications"
+              >
                 <Bell className="w-6 h-6 text-gray-600" />
                 <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
               <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
-                  <Building2 className="w-6 h-6 text-white" />
-                </div>
+                <ImageWithFallback
+                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=400&fit=crop&crop=face"
+                  alt="Anita Desai"
+                  className="w-10 h-10 rounded-full object-cover border-2 border-teal-200"
+                />
                 <div className="hidden sm:block">
-                  <p className="text-gray-900">Delhi Public School</p>
-                  <p className="text-gray-500 text-xs">Bangalore</p>
+                  <p className="text-gray-900">Anita Desai</p>
+                  <p className="text-gray-500 text-xs">Parent</p>
                 </div>
               </div>
             </div>
@@ -551,6 +579,7 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
               <button
                 onClick={() => setShowPostJob(false)}
                 className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-colors"
+                aria-label="Close dialog"
               >
                 ✕
               </button>
@@ -558,8 +587,9 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
 
             <div className="p-8 space-y-6">
               <div>
-                <label className="block text-gray-700 mb-2">Job Title</label>
+                <label htmlFor="job-title" className="block text-gray-700 mb-2">Job Title</label>
                 <input
+                  id="job-title"
                   type="text"
                   placeholder="e.g. Senior Mathematics Teacher"
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none"
@@ -567,8 +597,11 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
               </div>
 
               <div>
-                <label className="block text-gray-700 mb-2">Department</label>
-                <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none">
+                <label htmlFor="department" className="block text-gray-700 mb-2">Department</label>
+                <select 
+                  id="department"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none"
+                >
                   <option>Teaching Staff</option>
                   <option>Administrative Staff</option>
                   <option>Management</option>
@@ -578,8 +611,11 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-gray-700 mb-2">Employment Type</label>
-                  <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none">
+                  <label htmlFor="employment-type" className="block text-gray-700 mb-2">Employment Type</label>
+                  <select 
+                    id="employment-type"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none"
+                  >
                     <option>Full-time</option>
                     <option>Part-time</option>
                     <option>Contract</option>
@@ -587,8 +623,11 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 mb-2">Experience Required</label>
-                  <select className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none">
+                  <label htmlFor="experience-required" className="block text-gray-700 mb-2">Experience Required</label>
+                  <select 
+                    id="experience-required"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none"
+                  >
                     <option>0-2 years</option>
                     <option>3-5 years</option>
                     <option>6-10 years</option>
@@ -599,8 +638,9 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-gray-700 mb-2">Salary Range (₹)</label>
+                  <label htmlFor="salary-range" className="block text-gray-700 mb-2">Salary Range (₹)</label>
                   <input
+                    id="salary-range"
                     type="text"
                     placeholder="e.g. 40,000 - 60,000"
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none"
@@ -608,8 +648,9 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 mb-2">Location</label>
+                  <label htmlFor="location" className="block text-gray-700 mb-2">Location</label>
                   <input
+                    id="location"
                     type="text"
                     placeholder="e.g. Bangalore, Karnataka"
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none"
@@ -618,8 +659,9 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
               </div>
 
               <div>
-                <label className="block text-gray-700 mb-2">Job Description</label>
+                <label htmlFor="job-description" className="block text-gray-700 mb-2">Job Description</label>
                 <textarea
+                  id="job-description"
                   rows={6}
                   placeholder="Describe the role, responsibilities, and requirements..."
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-green-500 focus:outline-none resize-none"
