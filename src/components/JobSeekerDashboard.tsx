@@ -230,7 +230,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                   <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
                     <Clock className="w-6 h-6 text-purple-600" />
                   </div>
-                  <span className="text-purple-600">2 New</span>
+                  <span className="text-purple-600" style={{ color: 'rgba(21, 166, 250, 1)' }}>2 New</span>
                 </div>
                 <p className="text-gray-900 mb-1">2</p>
                 <p className="text-gray-500 text-sm">Interviews</p>
@@ -241,7 +241,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                   <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
                     <TrendingUp className="w-6 h-6 text-orange-600" />
                   </div>
-                  <span className="text-orange-600">Top 5%</span>
+                  <span className="text-orange-600" style={{ color: 'rgba(25, 237, 250, 1)' }}>Top 5%</span>
                 </div>
                 <p className="text-gray-900 mb-1">850</p>
                 <p className="text-gray-500 text-sm">Profile Views</p>
@@ -311,7 +311,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                         <button className="px-6 py-2.5 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition-colors">
                           Save
                         </button>
-                        <button className="px-6 py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all shadow-md group-hover:shadow-lg">
+                        <button className="px-6 py-2.5 text-white rounded-full transition-all shadow-md group-hover:shadow-lg" style={{ background: 'rgba(255, 255, 255, 1)', color: 'rgba(255, 255, 255, 1)', backgroundImage: 'none', backgroundClip: 'unset', WebkitBackgroundClip: 'unset' }}>
                           Apply Now
                         </button>
                       </div>
@@ -343,7 +343,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                           <p className="text-gray-900 mb-1">{interview.school}</p>
                           <p className="text-gray-600 text-sm">{interview.position}</p>
                         </div>
-                        <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs">
+                        <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs" style={{ color: 'rgba(25, 166, 250, 1)', backgroundColor: 'rgba(221, 237, 248, 1)' }}>
                           {interview.mode}
                         </span>
                       </div>
@@ -365,8 +365,8 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
               {/* Certifications & Badges */}
               <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
-                    <Award className="w-5 h-5 text-orange-600" />
+                  <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'rgba(219, 253, 255, 1)', color: 'rgba(197, 244, 247, 1)' }}>
+                    <Award className="w-5 h-5" style={{ color: 'rgba(25, 237, 250, 1)' }} />
                   </div>
                   <h3 className="text-gray-900">Certifications & Badges</h3>
                 </div>
@@ -386,9 +386,9 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                         <span className="text-gray-900">{cert.name}</span>
                       </div>
                       {cert.verified ? (
-                        <span className="text-blue-600 text-sm">Verified</span>
+                        <span className="text-blue-600 text-sm" style={{ color: 'rgba(25, 237, 250, 1)' }}>Verified</span>
                       ) : (
-                        <button className="text-orange-600 text-sm hover:text-orange-700 transition-colors">
+                        <button className="text-orange-600 text-sm hover:text-orange-700 transition-colors" style={{ color: 'rgba(250, 34, 22, 1)' }}>
                           Verify
                         </button>
                       )}
@@ -396,7 +396,7 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                   ))}
                 </div>
 
-                <button className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all shadow-md">
+                <button className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl hover:from-orange-600 hover:to-orange-700 transition-all shadow-md" style={{ background: 'linear-gradient(90deg, rgba(250, 34, 22, 1) 100%, rgba(216, 16, 5, 0) 0%)', color: 'rgba(255, 255, 255, 1)' }}>
                   <div className="flex items-center justify-center space-x-2">
                     <Upload className="w-4 h-4" />
                     <span>Add Certificate</span>

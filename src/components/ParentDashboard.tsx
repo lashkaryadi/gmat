@@ -173,8 +173,8 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
             <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-3xl p-8 text-white">
               <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                 <ImageWithFallback
-                  src={children[0].image}
-                  alt={children[0].name}
+                  src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop&crop=face"
+                  alt="Anita Desai"
                   className="w-24 h-24 rounded-2xl object-cover border-4 border-white/30"
                 />
                 <div className="flex-1">

@@ -105,7 +105,7 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
                 <ArrowLeft className="w-5 h-5 text-gray-600" />
               </button>
               <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(48, 57, 84, 1) 0%, rgba(21, 77, 236, 1) 100%)' }}>
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-gray-900">Get Me a Tutor</span>

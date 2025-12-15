@@ -77,7 +77,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(29, 37, 63, 1) 0%, rgba(23, 90, 249, 1) 100%)' }}>
                 <GraduationCap className="w-7 h-7 text-white" />
               </div>
               <div>
@@ -281,7 +281,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
                   key={index}
                   className="group bg-white border-2 border-gray-100 rounded-3xl p-8 hover:border-blue-300 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${stakeholder.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`} style={{ background: 'linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(23, 90, 249, 1) 100%)' }}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-gray-900 mb-2">{stakeholder.title}</h3>
@@ -299,7 +299,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               onClick={() => onNavigate('vendor')}
               className="group cursor-pointer bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-3xl p-8 hover:border-blue-400 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{ background: 'linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(23, 90, 249, 1) 100%)' }}>
                 <ShoppingBag className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-gray-900 mb-2">Become a Vendor</h3>
@@ -437,7 +437,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(23, 90, 249, 1) 100%)' }}>
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-white">Get Me a Tutor</span>
