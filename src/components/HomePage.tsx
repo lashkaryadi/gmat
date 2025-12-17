@@ -5,9 +5,11 @@ import CountUp from 'react-countup';
 
 interface HomePageProps {
   onNavigate: (view: UserRole) => void;
+  onShowLogin?: () => void;
+  onShowSignup?: () => void;
 }
 
-export function HomePage({ onNavigate }: HomePageProps) {
+export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProps) {
   const stakeholders = [
     {
       icon: Building2,
@@ -100,8 +102,17 @@ export function HomePage({ onNavigate }: HomePageProps) {
               >
                 Admin
               </button>
-              <button className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-200">
+              <button
+                className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-200"
+                onClick={onShowLogin}
+              >
                 Sign In
+              </button>
+              <button
+                className="ml-3 px-6 py-2.5 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition-colors"
+                onClick={onShowSignup}
+              >
+                Sign Up
               </button>
             </div>
           </div>

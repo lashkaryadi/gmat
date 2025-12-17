@@ -5,9 +5,11 @@ import { useState } from 'react';
 
 interface JobSeekerDashboardProps {
   onNavigate: (view: UserRole) => void;
+  onLogout: () => void;
+  user: { id: string; name: string; role: UserRole };
 }
 
-export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
+export function JobSeekerDashboard({ onNavigate, onLogout, user }: JobSeekerDashboardProps) {
   const [activeTab, setActiveTab] = useState('dashboard');
 
   const profileCompletion = 75;
@@ -124,17 +126,18 @@ export function JobSeekerDashboard({ onNavigate }: JobSeekerDashboardProps) {
                 <Bell className="w-6 h-6 text-gray-600" />
                 <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
-              <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=400&fit=crop&crop=face"
-                  alt="Priya Sharma"
-                  className="w-10 h-10 rounded-full object-cover border-2 border-blue-200"
-                />
-                <div className="hidden sm:block">
-                  <p className="text-gray-900">Priya Sharma</p>
-                  <p className="text-gray-500 text-xs">Mathematics Teacher</p>
-                </div>
+            <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
+              <ImageWithFallback
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=400&fit=crop&crop=face"
+                alt={user.name || "User"}
+                className="w-10 h-10 rounded-full object-cover border-2 border-blue-200"
+              />
+              <div className="hidden sm:block">
+                <p className="text-gray-900">{user.name || "User"}</p>
+                <p className="text-gray-500 text-xs">{user.role[0].toUpperCase() + user.role.slice(1)}</p>
               </div>
+              <button className="ml-4 px-4 py-1 bg-red-100 text-red-600 rounded-full hover:bg-red-200 transition" onClick={onLogout}>Logout</button>
+            </div>
             </div>
           </div>
         </div>
