@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ["student", "institute", "parent","tutor"],
+    enum: ["student", "institute", "parent", "tutor", "jobseeker", "vendor", "admin"],
     required: true,
   },
   emailVerified: {
@@ -45,7 +45,14 @@ const userSchema = new mongoose.Schema({
     phoneOTPExpiresAt: {
         type: Date,
     },
- 
+    // Password reset fields
+    passwordResetToken: {
+        type: String,
+    },
+    passwordResetExpires: {
+        type: Date,
+    },
+
 });
 
 const User = mongoose.model("User", userSchema);
