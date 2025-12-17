@@ -24,14 +24,17 @@ import {
 } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
+import { Sidebar } from '../components/ui/Sidebar';
 
 interface InstitutionDashboardProps {
   onNavigate: (view: UserRole) => void;
+  user: { id: string; name: string; role: UserRole };
 }
 
-export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) {
+export function InstitutionDashboard({ onNavigate, user }: InstitutionDashboardProps) {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [showPostJob, setShowPostJob] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const topMatches = [
     {
@@ -91,87 +94,97 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => onNavigate('home')}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                aria-label="Go back to home"
-              >
-                <ArrowLeft className="w-5 h-5 text-gray-600" />
-              </button>
-              <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
-                  <GraduationCap className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-gray-900">Get Me a Tutor</span>
-              </div>
-            </div>
+    <div className="min-h-screen bg-gray-50 flex">
+      <Sidebar
+        userRole={user?.role as 'institution' || 'institution'}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
 
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => setShowPostJob(true)}
-                className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all shadow-md hidden md:flex items-center space-x-2"
-              >
-                <Plus className="w-4 h-4" />
-                <span>Post Job</span>
-              </button>
-              <button
-                className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
-                aria-label="View notifications"
-              >
-                <Bell className="w-6 h-6 text-gray-600" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-              </button>
-              <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=400&fit=crop&crop=face"
-                  alt="Anita Desai"
-                  className="w-10 h-10 rounded-full object-cover border-2 border-teal-200"
-                />
-                <div className="hidden sm:block">
-                  <p className="text-gray-900">Anita Desai</p>
-                  <p className="text-gray-500 text-xs">Parent</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Navigation Tabs */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex space-x-8 overflow-x-auto">
-            {[
-              { id: 'dashboard', label: 'Dashboard', icon: TrendingUp },
-              { id: 'browse', label: 'Browse Candidates', icon: Search },
-              { id: 'jobs', label: 'My Jobs', icon: Briefcase },
-              { id: 'subscription', label: 'Subscription', icon: Award },
-            ].map((tab) => {
-              const Icon = tab.icon;
-              return (
+      {/* Main content area */}
+      <div className="flex-1 lg:ml-64">
+        {/* Header */}
+        <header className="sticky top-0 z-40 bg-white shadow-md">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex items-center space-x-4">
                 <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-4 border-b-2 transition-colors whitespace-nowrap ${
-                    activeTab === tab.id
-                      ? 'border-blue-600 text-blue-600'
-                      : 'border-transparent text-gray-600 hover:text-gray-900'
-                  }`}
+                  onClick={() => onNavigate('home')}
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors lg:hidden"
+                  aria-label="Go back to home"
                 >
-                  <Icon className="w-4 h-4" />
-                  <span>{tab.label}</span>
+                  <ArrowLeft className="w-5 h-5 text-gray-600" />
                 </button>
-              );
-            })}
+                <div className="flex items-center space-x-2">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
+                    <GraduationCap className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-gray-900">Get Me a Tutor</span>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={() => setShowPostJob(true)}
+                  className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full hover:from-blue-600 hover:to-blue-700 transition-all shadow-md hidden md:flex items-center space-x-2"
+                >
+                  <Plus className="w-4 h-4" />
+                  <span>Post Job</span>
+                </button>
+                <button
+                  className="relative p-2 hover:bg-gray-100 rounded-full transition-colors"
+                  aria-label="View notifications"
+                >
+                  <Bell className="w-6 h-6 text-gray-600" />
+                  <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                </button>
+                <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&h=400&fit=crop&crop=face"
+                    alt={user?.name || "Anita Desai"}
+                    className="w-10 h-10 rounded-full object-cover border-2 border-teal-200"
+                  />
+                  <div className="hidden sm:block">
+                    <p className="text-gray-900">{user?.name || "Anita Desai"}</p>
+                    <p className="text-gray-500 text-xs">{user?.role ? (user.role[0].toUpperCase() + user.role.slice(1)) : "Institution"}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Navigation Tabs - hidden on desktop when sidebar is available */}
+        <div className="bg-white border-b border-gray-200 lg:hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex space-x-8 overflow-x-auto">
+              {[
+                { id: 'dashboard', label: 'Dashboard', icon: TrendingUp },
+                { id: 'browse', label: 'Browse Candidates', icon: Search },
+                { id: 'jobs', label: 'My Jobs', icon: Briefcase },
+                { id: 'subscription', label: 'Subscription', icon: Award },
+              ].map((tab) => {
+                const Icon = tab.icon;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`flex items-center space-x-2 px-4 py-4 border-b-2 transition-colors whitespace-nowrap ${
+                      activeTab === tab.id
+                        ? 'border-blue-600 text-blue-600'
+                        : 'border-transparent text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    <span>{tab.label}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -569,6 +582,7 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
           </div>
         )}
       </div>
+      </div>
 
       {/* Post Job Modal */}
       {showPostJob && (
@@ -685,7 +699,7 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
       )}
 
       {/* Mobile Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden z-40">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden z-40 lg:hidden">
         <div className="grid grid-cols-4 gap-1 px-2 py-2">
           {[
             { id: 'dashboard', icon: TrendingUp, label: 'Home' },
@@ -713,4 +727,4 @@ export function InstitutionDashboard({ onNavigate }: InstitutionDashboardProps) 
       </div>
     </div>
   );
-}
+  }

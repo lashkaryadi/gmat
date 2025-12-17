@@ -4,6 +4,90 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
 
+@layer components {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.4s ease-out;
+    animation-fill-mode: both;
+  }
+
+  .animate-pulse-gradient {
+    animation: pulseGradient 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulseGradient {
+    0%, 100% {
+      background-size: 200% 200%;
+      background-position: left center;
+    }
+    50% {
+      background-size: 200% 200%;
+      background-position: right center;
+    }
+  }
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-md hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-xl hover:bg-blue-50 transition-colors;
+}
+
+.btn-outline {
+  @apply px-6 py-3 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-blue-300 hover:text-blue-600 transition-colors;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-3xl p-8 shadow-md border border-gray-100 hover:shadow-lg transition-shadow;
+}
+
+/* Professional dashboard styles */
+.dashboard-header {
+  @apply sticky top-0 z-40 bg-white shadow-md;
+}
+
+.dashboard-sidebar {
+  @apply fixed inset-y-0 left-0 z-40 w-64 bg-white shadow-lg transition-transform duration-300 ease-in-out;
+}
+
+.dashboard-main {
+  @apply flex-1 lg:ml-64;
+}
+
+/* Responsive sidebar */
+@media (min-width: 1024px) {
+  .dashboard-sidebar {
+    @apply translate-x-0 !important;
+  }
+}
+
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
     *, :before, :after, ::backdrop {

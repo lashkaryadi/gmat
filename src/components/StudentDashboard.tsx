@@ -3,13 +3,16 @@ import { ArrowLeft, Trophy, Target, TrendingUp, BookOpen, Video, FileText, Award
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { Sidebar } from '../components/ui/Sidebar';
 
 interface StudentDashboardProps {
   onNavigate: (view: UserRole) => void;
+  user: { id: string; name: string; role: UserRole };
 }
 
-export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
+export function StudentDashboard({ onNavigate, user }: StudentDashboardProps) {
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const performanceData = [
     { subject: 'Math', score: 85 },
@@ -79,75 +82,85 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
   const COLORS = ['#2563eb', '#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe'];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => onNavigate('home')}
-                className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-              >
-                <ArrowLeft className="w-5 h-5 text-gray-600" />
-              </button>
-              <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
-                  <Award className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-gray-900">Student Portal</span>
-              </div>
-            </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 flex">
+      <Sidebar
+        userRole={user?.role as 'student' || 'student'}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
 
-            <div className="flex items-center space-x-4">
-              <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
-                <Bell className="w-6 h-6 text-gray-600" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-blue-500 rounded-full"></span>
-              </button>
-              <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center">
-                  <User className="w-6 h-6 text-white" />
-                </div>
-                <div className="hidden sm:block">
-                  <p className="text-gray-900">Aarav Sharma</p>
-                  <p className="text-gray-500 text-xs">Class 8-A</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Navigation Tabs */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex space-x-8 overflow-x-auto">
-            {[
-              { id: 'dashboard', label: 'Dashboard', icon: Target },
-              { id: 'olympiad', label: 'Olympiad Zone', icon: Trophy },
-              { id: 'learning', label: 'Learning', icon: BookOpen },
-              { id: 'tests', label: 'Practice Tests', icon: FileText },
-              { id: 'progress', label: 'My Progress', icon: TrendingUp },
-            ].map((tab) => {
-              const Icon = tab.icon;
-              return (
+      {/* Main content area */}
+      <div className="flex-1 lg:ml-64">
+        {/* Header */}
+        <header className="sticky top-0 z-40 bg-white shadow-md">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex items-center space-x-4">
                 <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-4 border-b-2 transition-colors whitespace-nowrap ${
-                    activeTab === tab.id
-                      ? 'border-blue-600 text-blue-600'
-                      : 'border-transparent text-gray-600 hover:text-gray-900'
-                  }`}
+                  onClick={() => onNavigate('home')}
+                  className="p-2 hover:bg-gray-100 rounded-full transition-colors lg:hidden"
                 >
-                  <Icon className="w-4 h-4" />
-                  <span>{tab.label}</span>
+                  <ArrowLeft className="w-5 h-5 text-gray-600" />
                 </button>
-              );
-            })}
+                <div className="flex items-center space-x-2">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
+                    <Award className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-gray-900">Student Portal</span>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <button className="relative p-2 hover:bg-gray-100 rounded-full transition-colors">
+                  <Bell className="w-6 h-6 text-gray-600" />
+                  <span className="absolute top-1 right-1 w-2 h-2 bg-blue-500 rounded-full"></span>
+                </button>
+                <div className="flex items-center space-x-3 pl-4 border-l border-gray-200">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center">
+                    <User className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="hidden sm:block">
+                    <p className="text-gray-900">{user?.name || 'Aarav Sharma'}</p>
+                    <p className="text-gray-500 text-xs">Class 8-A</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Navigation Tabs - hidden on desktop when sidebar is available */}
+        <div className="bg-white border-b border-gray-200 lg:hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex space-x-8 overflow-x-auto">
+              {[
+                { id: 'dashboard', label: 'Dashboard', icon: Target },
+                { id: 'olympiad', label: 'Olympiad Zone', icon: Trophy },
+                { id: 'learning', label: 'Learning', icon: BookOpen },
+                { id: 'tests', label: 'Practice Tests', icon: FileText },
+                { id: 'progress', label: 'My Progress', icon: TrendingUp },
+              ].map((tab) => {
+                const Icon = tab.icon;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`flex items-center space-x-2 px-4 py-4 border-b-2 transition-colors whitespace-nowrap ${
+                      activeTab === tab.id
+                        ? 'border-blue-600 text-blue-600'
+                        : 'border-transparent text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    <span>{tab.label}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -601,9 +614,10 @@ export function StudentDashboard({ onNavigate }: StudentDashboardProps) {
           </div>
         )}
       </div>
+      </div>
 
       {/* Mobile Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden z-40">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden z-40 lg:hidden">
         <div className="grid grid-cols-5 gap-1 px-2 py-2">
           {[
             { id: 'dashboard', icon: Target, label: 'Home' },

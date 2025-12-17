@@ -2,13 +2,16 @@ import { UserRole } from '../App';
 import { ArrowLeft, Bell, User, Calendar, DollarSign, MessageCircle, FileText, Award, School, Baby, CheckCircle, Clock, AlertCircle, ChevronRight, Mail, Phone } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
+import { Sidebar } from '../components/ui/Sidebar';
 
 interface ParentDashboardProps {
   onNavigate: (view: UserRole) => void;
+  user: { id: string; name: string; role: UserRole };
 }
 
-export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
+export function ParentDashboard({ onNavigate, user }: ParentDashboardProps) {
   const [activeTab, setActiveTab] = useState('dashboard');
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const circulars = [
     {
@@ -89,81 +92,91 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-white to-blue-200">
-      {/* Header */}
-      <header className="sticky top-0 z-40 bg-blue-600 shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-4">
-              <button
-                onClick={() => onNavigate('home')}
-                className="p-2 hover:bg-blue-700 rounded-full transition-colors"
-                aria-label="Go back to home"
-              >
-                <ArrowLeft className="w-5 h-5 text-white" />
-              </button>
-              <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
-                  <Baby className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-white">Parent Portal</span>
-              </div>
-            </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-white to-blue-200 flex">
+      <Sidebar
+        userRole={user?.role as 'parent' || 'parent'}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
 
-            <div className="flex items-center space-x-4">
-              <button
-                className="relative p-2 hover:bg-blue-700 rounded-full transition-colors"
-                aria-label="View notifications"
-              >
-                <Bell className="w-6 h-6 text-white" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-              </button>
-              <div className="flex items-center space-x-3 pl-4 border-l border-blue-400">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop&crop=face"
-                  alt="Anita Desai"
-                  className="w-10 h-10 rounded-full object-cover border-2 border-blue-200"
-                />
-                <div className="hidden sm:block">
-                  <p className="text-white">Anita Desai</p>
-                  <p className="text-white text-xs">Parent</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Navigation Tabs */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex space-x-8 overflow-x-auto">
-            {[
-              { id: 'dashboard', label: 'Dashboard', icon: School },
-              { id: 'circulars', label: 'Circulars', icon: FileText },
-              { id: 'olympiad', label: 'Olympiad', icon: Award },
-              { id: 'fees', label: 'Fees', icon: DollarSign },
-              { id: 'messages', label: 'Messages', icon: MessageCircle },
-            ].map((tab) => {
-              const Icon = tab.icon;
-              return (
+      {/* Main content area */}
+      <div className="flex-1 lg:ml-64">
+        {/* Header */}
+        <header className="sticky top-0 z-40 bg-blue-600 shadow-md">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <div className="flex items-center space-x-4">
                 <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center space-x-2 px-4 py-4 border-b-2 transition-colors whitespace-nowrap ${
-                    activeTab === tab.id
-                      ? 'border-blue-600 text-blue-600'
-                      : 'border-transparent text-gray-600 hover:text-gray-900'
-                  }`}
+                  onClick={() => onNavigate('home')}
+                  className="p-2 hover:bg-blue-700 rounded-full transition-colors lg:hidden"
+                  aria-label="Go back to home"
                 >
-                  <Icon className="w-4 h-4" />
-                  <span>{tab.label}</span>
+                  <ArrowLeft className="w-5 h-5 text-white" />
                 </button>
-              );
-            })}
+                <div className="flex items-center space-x-2">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
+                    <Baby className="w-6 h-6 text-white" />
+                  </div>
+                  <span className="text-white">Parent Portal</span>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <button
+                  className="relative p-2 hover:bg-blue-700 rounded-full transition-colors"
+                  aria-label="View notifications"
+                >
+                  <Bell className="w-6 h-6 text-white" />
+                  <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                </button>
+                <div className="flex items-center space-x-3 pl-4 border-l border-blue-400">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=400&h=400&fit=crop&crop=face"
+                    alt={user?.name || "Anita Desai"}
+                    className="w-10 h-10 rounded-full object-cover border-2 border-blue-200"
+                  />
+                  <div className="hidden sm:block">
+                    <p className="text-white">{user?.name || "Anita Desai"}</p>
+                    <p className="text-white text-xs">Parent</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Navigation Tabs - hidden on desktop when sidebar is available */}
+        <div className="bg-white border-b border-gray-200 lg:hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex space-x-8 overflow-x-auto">
+              {[
+                { id: 'dashboard', label: 'Dashboard', icon: School },
+                { id: 'circulars', label: 'Circulars', icon: FileText },
+                { id: 'olympiad', label: 'Olympiad', icon: Award },
+                { id: 'fees', label: 'Fees', icon: DollarSign },
+                { id: 'messages', label: 'Messages', icon: MessageCircle },
+              ].map((tab) => {
+                const Icon = tab.icon;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`flex items-center space-x-2 px-4 py-4 border-b-2 transition-colors whitespace-nowrap ${
+                      activeTab === tab.id
+                        ? 'border-blue-600 text-blue-600'
+                        : 'border-transparent text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    <span>{tab.label}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -500,9 +513,10 @@ export function ParentDashboard({ onNavigate }: ParentDashboardProps) {
           </div>
         )}
       </div>
+      </div>
 
       {/* Mobile Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden z-40">
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 md:hidden z-40 lg:hidden">
         <div className="grid grid-cols-5 gap-1 px-2 py-2">
           {[
             { id: 'dashboard', icon: School, label: 'Home' },

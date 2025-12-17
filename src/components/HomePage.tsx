@@ -89,19 +89,13 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
             </div>
 
             <div className="hidden md:flex items-center space-x-6">
-              <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-              <a href="#stakeholders" className="text-gray-700 hover:text-blue-600 transition-colors">About Us</a>
-              <a href="#testimonials" className="text-gray-700 hover:text-blue-600 transition-colors">Testimonials</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+              <a href="#hire-tutor" className="text-gray-700 hover:text-blue-600 transition-colors">Hire Tutor</a>
+              <a href="#find-jobs" className="text-gray-700 hover:text-blue-600 transition-colors">Find Jobs</a>
+              <a href="#olympiad" className="text-gray-700 hover:text-blue-600 transition-colors">Olympiad</a>
+              <a href="#parent" className="text-gray-700 hover:text-blue-600 transition-colors">Parent</a>
             </div>
 
             <div className="flex items-center space-x-3">
-              <button
-                onClick={() => onNavigate('admin')}
-                className="hidden sm:block px-4 py-2 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition-colors"
-              >
-                Admin
-              </button>
               <button
                 className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-full hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-200"
                 onClick={onShowLogin}
@@ -143,25 +137,25 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
                 A comprehensive platform bringing together Educational Institutions, Job Seekers, Students, Parents, and Vendors. Join over 4 lakh+ members in revolutionizing education in India.
               </p>
 
-              <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 <button
-                  onClick={() => onNavigate('jobseeker')}
-                  className="group px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300 transform hover:scale-150"
+                  onClick={() => onNavigate('institution')}
+                  className="group px-6 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-2xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300 transform hover:scale-105"
                 >
                   <div className="flex items-center justify-center space-x-2">
-                    <Briefcase className="w-5 h-5" />
-                    <span>Find Jobs</span>
+                    <Users className="w-5 h-5" />
+                    <span>Hire Tutor</span>
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </button>
 
                 <button
-                  onClick={() => onNavigate('institution')}
+                  onClick={() => onNavigate('jobseeker')}
                   className="group px-6 py-4 bg-white border-2 border-blue-600 text-blue-600 rounded-2xl hover:bg-blue-50 transition-all shadow-md hover:shadow-lg transform hover:scale-105"
                 >
                   <div className="flex items-center justify-center space-x-2">
-                    <Users className="w-5 h-5" />
-                    <span>Hire Talent</span>
+                    <Briefcase className="w-5 h-5" />
+                    <span>Find Jobs</span>
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </button>
@@ -183,7 +177,7 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
                 >
                   <div className="flex items-center justify-center space-x-2">
                     <Baby className="w-5 h-5" />
-                    <span>Parent Login</span>
+                    <span>Parent Zone</span>
                     <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </button>
@@ -284,7 +278,7 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {stakeholders.map((stakeholder, index) => {
               const Icon = stakeholder.icon;
               return (
@@ -333,7 +327,7 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
                 <Award className="w-7 h-7 text-blue-600" />
@@ -395,7 +389,7 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-3xl p-8 hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-4">

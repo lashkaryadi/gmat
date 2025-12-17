@@ -78,7 +78,7 @@ export async function whoami(): Promise<WhoamiResponse> {
     },
   });
   const data: WhoamiResponse = await res.json();
-  if (!res.ok) throw new Error(data.message || "Failed to get user info");
+  if (!res.ok) throw new Error("Failed to get user info");
   return data;
 }
 

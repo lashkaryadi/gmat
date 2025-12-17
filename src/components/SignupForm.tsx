@@ -35,12 +35,16 @@ export function SignupForm({ onSignup }: SignupFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-sm mx-auto space-y-6 bg-white p-6 rounded-2xl shadow">
-      <h2 className="text-xl font-bold mb-2">Sign Up</h2>
-      <div>
+    <form onSubmit={handleSubmit} className="w-full max-w-xs sm:max-w-sm mx-auto p-8 rounded-2xl shadow-lg bg-gradient-to-br from-blue-50 to-white border border-blue-100 animate-fadeIn">
+      <div className="text-center mb-6">
+        <h2 className="text-2xl font-bold text-gray-800">Create Account</h2>
+        <p className="text-gray-600 text-sm mt-1">Join our education community today</p>
+      </div>
+
+      <div className="mb-4 animate-slideIn">
         <input
           type="text"
-          className="border p-2 rounded w-full"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           name="name"
           placeholder="Full Name"
           value={form.name}
@@ -48,32 +52,35 @@ export function SignupForm({ onSignup }: SignupFormProps) {
           required
         />
       </div>
-      <div>
+
+      <div className="mb-4 animate-slideIn">
         <input
           type="email"
-          className="border p-2 rounded w-full"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           name="email"
-          placeholder="Email"
+          placeholder="Email Address"
           value={form.email}
           onChange={handleChange}
           required
         />
       </div>
-      <div>
+
+      <div className="mb-4 animate-slideIn">
         <input
           type="text"
-          className="border p-2 rounded w-full"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           name="phone"
-          placeholder="Phone"
+          placeholder="Phone Number"
           value={form.phone}
           onChange={handleChange}
           required
         />
       </div>
-      <div>
+
+      <div className="mb-4 animate-slideIn">
         <input
           type="password"
-          className="border p-2 rounded w-full"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           name="password"
           placeholder="Password"
           value={form.password}
@@ -81,10 +88,11 @@ export function SignupForm({ onSignup }: SignupFormProps) {
           required
         />
       </div>
-      <div>
+
+      <div className="mb-6 animate-slideIn">
         <select
           name="role"
-          className="border p-2 rounded w-full"
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           value={form.role}
           onChange={handleChange}
           required
@@ -96,9 +104,27 @@ export function SignupForm({ onSignup }: SignupFormProps) {
           <option value="vendor">Vendor</option>
         </select>
       </div>
-      {error && <div className="text-red-500">{error}</div>}
-      <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded" disabled={loading}>
-        {loading ? "Creating Account..." : "Sign Up"}
+
+      {error && (
+        <div className="mb-4 text-red-500 text-sm text-center py-2 px-4 bg-red-50 rounded-lg animate-pulse">
+          {error}
+        </div>
+      )}
+
+      <button
+        type="submit"
+        className="w-full py-3.5 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center"
+        disabled={loading}
+      >
+        {loading ? (
+          <>
+            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            Creating Account...
+          </>
+        ) : "Sign Up"}
       </button>
     </form>
   );
