@@ -4,14 +4,13 @@ import { JobSeekerDashboard } from './components/JobSeekerDashboard';
 import { InstitutionDashboard } from './components/InstitutionDashboard';
 import { ParentDashboard } from './components/ParentDashboard';
 import { StudentDashboard } from './components/StudentDashboard';
-import { VendorDashboard } from './components/VendorDashboard';
 import { SuperAdminDashboard } from './components/SuperAdminDashboard';
 import { LoginForm } from './components/LoginForm';
 import { SignupForm } from './components/SignupForm';
 import { setToken, getToken, removeToken } from './api/jwt';
 import { whoami } from './api/auth';
 
-export type UserRole = 'home' | 'jobseeker' | 'institution' | 'parent' | 'student' | 'vendor' | 'admin';
+export type UserRole = 'home' | 'jobseeker' | 'institution' | 'parent' | 'student' | 'admin';
 
 type AuthUser = { id: string; name: string; role: UserRole } | null;
 
@@ -100,8 +99,6 @@ export default function App() {
           return <ParentDashboard onNavigate={setCurrentView} onLogout={handleLogout} user={authUser} />;
         case 'student':
           return <StudentDashboard onNavigate={setCurrentView} onLogout={handleLogout} user={authUser} />;
-        case 'vendor':
-          return <VendorDashboard onNavigate={setCurrentView} onLogout={handleLogout} user={authUser} />;
         case 'admin':
           return <SuperAdminDashboard onNavigate={setCurrentView} onLogout={handleLogout} user={authUser} />;
         default:

@@ -1,5 +1,5 @@
 import { UserRole } from '../App';
-import { GraduationCap, Briefcase, Users, School, ShoppingBag, BookOpen, Award, TrendingUp, MessageCircle, ChevronRight, Star, CheckCircle, Building2, UserCheck, Baby, Package } from 'lucide-react';
+import { GraduationCap, Briefcase, Users, School, BookOpen, Award, TrendingUp, MessageCircle, ChevronRight, Star, CheckCircle, Building2, UserCheck, Baby } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import CountUp from 'react-countup';
 
@@ -38,13 +38,6 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
       description: 'Stay Connected with Schools',
       color: 'from-blue-600 to-blue-800',
       count: '1,50,000+',
-    },
-    {
-      icon: Package,
-      title: 'Vendors',
-      description: 'Educational Products & Services',
-      color: 'from-blue-600 to-blue-800',
-      count: '1,000+',
     },
   ];
 
@@ -134,7 +127,7 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
                 Connecting India's Education Community
               </h1>
               <p className="text-gray-600 mb-8">
-                A comprehensive platform bringing together Educational Institutions, Job Seekers, Students, Parents, and Vendors. Join over 4 lakh+ members in revolutionizing education in India.
+                A comprehensive platform bringing together Educational Institutions, Job Seekers, Students, and Parents. Join over 4 lakh+ members in revolutionizing education in India.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -260,9 +253,9 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
             </div>
             <div className="text-center text-white">
               <div className="mb-2">
-                <CountUp end={1000} duration={2.5} separator="," suffix="+" />
+                <CountUp end={150000} duration={2.5} separator="," suffix="+" />
               </div>
-              <p className="text-blue-100">Vendors</p>
+              <p className="text-blue-100">Parents</p>
             </div>
           </div>
         </div>
@@ -278,7 +271,7 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8">
             {stakeholders.map((stakeholder, index) => {
               const Icon = stakeholder.icon;
               return (
@@ -299,20 +292,6 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
               );
             })}
 
-            {/* Vendor Card */}
-            <div
-              onClick={() => onNavigate('vendor')}
-              className="group cursor-pointer bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-3xl p-8 hover:border-blue-400 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform" style={{ background: 'linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(23, 90, 249, 1) 100%)' }}>
-                <ShoppingBag className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-gray-900 mb-2">Become a Vendor</h3>
-              <p className="text-gray-600 mb-4">Sell educational products & services</p>
-              <button className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
-                Join Now
-              </button>
-            </div>
           </div>
         </div>
       </section>
@@ -327,7 +306,7 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
               <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
                 <Award className="w-7 h-7 text-blue-600" />
@@ -368,13 +347,6 @@ export function HomePage({ onNavigate, onShowLogin, onShowSignup }: HomePageProp
               <p className="text-gray-600">Powerful tools for recruitment and candidate management</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
-                <ShoppingBag className="w-7 h-7 text-blue-600" />
-              </div>
-              <h3 className="text-gray-900 mb-3">Vendor Marketplace</h3>
-              <p className="text-gray-600">Access to quality educational products and services</p>
-            </div>
           </div>
         </div>
       </section>

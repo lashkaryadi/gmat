@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 
 interface SidebarProps {
-  userRole: 'jobseeker' | 'student' | 'parent' | 'institution' | 'vendor' | 'admin';
+  userRole: 'jobseeker' | 'student' | 'parent' | 'institution' | 'admin';
   activeTab?: string;
   onTabChange: (tab: string) => void;
   sidebarOpen: boolean;
@@ -92,7 +92,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
               {userRole === 'student' && <GraduationCap className="w-6 h-6 text-white" />}
               {userRole === 'parent' && <Baby className="w-6 h-6 text-white" />}
               {userRole === 'institution' && <Building2 className="w-6 h-6 text-white" />}
-              {userRole === 'vendor' && <GraduationCap className="w-6 h-6 text-white" />}
               {userRole === 'admin' && <GraduationCap className="w-6 h-6 text-white" />}
             </div>
             <span className="text-gray-900 font-semibold capitalize">{userRole} Portal</span>

@@ -1,5 +1,5 @@
 import { UserRole } from '../App';
-import { ArrowLeft, Shield, Users, Building2, GraduationCap, ShoppingBag, TrendingUp, DollarSign, CheckCircle, AlertCircle, MapPin, Edit, Moon, Sun, Bell, User, Eye, FileText, Award, Ban, Search } from 'lucide-react';
+import { ArrowLeft, Shield, Users, Building2, GraduationCap, TrendingUp, DollarSign, CheckCircle, AlertCircle, MapPin, Edit, Moon, Sun, Bell, User, Eye, FileText, Award, Ban, Search } from 'lucide-react';
 import { useState } from 'react';
 import { BarChart, Bar, LineChart, Line, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
@@ -16,7 +16,6 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
     { label: 'Job Seekers', value: 52340, growth: '+18%' },
     { label: 'Students', value: 205678, growth: '+25%' },
     { label: 'Parents', value: 156234, growth: '+20%' },
-    { label: 'Vendors', value: 1245, growth: '+8%' },
     { label: 'District Reps', value: 2487, growth: '+5%' },
   ];
 
@@ -33,7 +32,6 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
     { name: 'Job Seekers', value: 52340, color: '#3b82f6' },
     { name: 'Students', value: 205678, color: '#60a5fa' },
     { name: 'Parents', value: 156234, color: '#93c5fd' },
-    { name: 'Vendors', value: 1245, color: '#bfdbfe' },
   ];
 
   const kycQueue = [
@@ -52,14 +50,6 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
       date: '27 Nov 2025',
       status: 'Under Review',
       docs: 3,
-    },
-    {
-      id: 'KYC-2025-1522',
-      name: 'EduMart Supplies',
-      type: 'Vendor',
-      date: '26 Nov 2025',
-      status: 'Pending',
-      docs: 4,
     },
   ];
 
@@ -203,7 +193,7 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
             </div>
 
             {/* Global Statistics */}
-            <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
               {platformStats.map((stat, index) => (
                 <div key={index} className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'} rounded-2xl p-6 shadow-md border`}>
                   <div className="flex items-center justify-between mb-4">
@@ -212,15 +202,13 @@ export function SuperAdminDashboard({ onNavigate }: SuperAdminDashboardProps) {
                       index === 1 ? 'bg-blue-100' :
                       index === 2 ? 'bg-blue-100' :
                       index === 3 ? 'bg-blue-100' :
-                      index === 4 ? 'bg-blue-100' :
                       'bg-blue-100'
                     } rounded-xl flex items-center justify-center`}>
                       {index === 0 && <Building2 className="w-6 h-6 text-blue-600" />}
                       {index === 1 && <Users className="w-6 h-6 text-blue-600" />}
                       {index === 2 && <GraduationCap className="w-6 h-6 text-blue-600" />}
                       {index === 3 && <Users className="w-6 h-6 text-blue-600" />}
-                      {index === 4 && <ShoppingBag className="w-6 h-6 text-blue-600" />}
-                      {index === 5 && <MapPin className="w-6 h-6 text-blue-600" />}
+                      {index === 4 && <MapPin className="w-6 h-6 text-blue-600" />}
                     </div>
                     <span className="text-blue-600 text-sm">{stat.growth}</span>
                   </div>
