@@ -3,7 +3,7 @@ import { ArrowLeft, Trophy, Target, TrendingUp, BookOpen, Video, FileText, Award
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import { Sidebar } from '../components/ui/Sidebar';
+import { Sidebar } from './ui/Sidebar';
 
 interface StudentDashboardProps {
   onNavigate: (view: UserRole) => void;

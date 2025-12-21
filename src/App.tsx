@@ -84,10 +84,10 @@ export default function App() {
     }
 
     if (showAuth === 'login') {
-      return <LoginForm onLogin={handleLogin} />;
+      return <LoginForm onLogin={handleLogin} onNavigateHome={() => { setShowAuth(null); setCurrentView('home'); }} />;
     }
     if (showAuth === 'signup') {
-      return <SignupForm onSignup={handleSignup} />;
+      return <SignupForm onSignup={handleSignup} onNavigateHome={() => { setShowAuth(null); setCurrentView('home'); }} />;
     }
     if (authUser) {
       // Example: Route by role for now

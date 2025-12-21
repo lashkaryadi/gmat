@@ -2,7 +2,7 @@ import { UserRole } from '../App';
 import { ArrowLeft, Bell, User, Calendar, DollarSign, MessageCircle, FileText, Award, School, Baby, CheckCircle, Clock, AlertCircle, ChevronRight, Mail, Phone } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { useState } from 'react';
-import { Sidebar } from '../components/ui/Sidebar';
+import { Sidebar } from './ui/Sidebar';
 
 interface ParentDashboardProps {
   onNavigate: (view: UserRole) => void;
